@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebOlayaDigital.Interfaces;
+using WebOlayaDigital.Models;
 
 namespace WebOlayaDigital.Controllers
 {
@@ -19,7 +20,25 @@ namespace WebOlayaDigital.Controllers
         }
 
         [Route("Administrador")]
-        public IActionResult Index()
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreatePOST()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreatePOST(Post data)
+        {
+            return View();
+        }
+
+
+        public ActionResult Test()
         {
             return View();
         }

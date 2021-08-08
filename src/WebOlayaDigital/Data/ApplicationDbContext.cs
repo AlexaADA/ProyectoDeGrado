@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebOlayaDigital.Models;
 
 namespace WebOlayaDigital.Data
 {
@@ -12,5 +13,6 @@ namespace WebOlayaDigital.Data
             : base(options)
         {
         }
+        public DbSet<WebOlayaDigital.Models.Post> Post { get; set; }
     }
 }

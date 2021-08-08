@@ -1,5 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    string imagen = Url.Content($"~/img/bg3.jpg");
+    ViewData["Title"] = "Administración de la aplicativo";
 }
-<h1>Hola Mundo</h1>
+<div class="container">
+    <div class="row">
+
+
+        <div class="card m-2" style="width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title">POST</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Sección de publicaciones</h6>
+                <p class="card-text">En esta sección podras encontrar todas los post's publicados, los cuales podra actualizar</p>
+                <a href="javascript:;" class="card-link">Ver post's</a>
+                <a href="@Url.Action("CreatePOST")" class="card-link">Crear Post</a>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title">BIBLIOTECA</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="javascript:;" class="card-link">Card link</a>
+                <a href="javascript:;" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="javascript:;" class="card-link">Card link</a>
+                <a href="javascript:;" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>

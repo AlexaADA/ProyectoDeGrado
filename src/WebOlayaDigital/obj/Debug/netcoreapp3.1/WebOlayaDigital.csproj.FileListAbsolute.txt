@@ -323,7 +323,6 @@ D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\runtim
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.csprojAssemblyReference.cache
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.AssemblyInfoInputs.cache
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.AssemblyInfo.cs
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.csproj.CoreCompileInputs.cache
@@ -392,3 +391,8 @@ D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOla
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.pdb
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.genruntimeconfig.cache
 D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\WebOlayaDigital.csproj.AssemblyReference.cache
+D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\_ViewStart.cshtml.g.cs
+D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Details.cshtml.g.cs
+D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\CreatePOST.cshtml.g.cs
+D:\VISUAL STUDIO\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Test.cshtml.g.cs
