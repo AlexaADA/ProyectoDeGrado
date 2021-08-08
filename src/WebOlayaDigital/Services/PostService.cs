@@ -14,7 +14,7 @@ namespace WebOlayaDigital.Services
     {
         #region "Field"
         private readonly IConfiguration _configuration;
-        private readonly string getPostAPI = "GetAllApis:GetPost";
+        private readonly string getPostAPI = "ConfigUrls:url";
         #endregion
         public PostService(IConfiguration configuration)
         {
@@ -22,7 +22,7 @@ namespace WebOlayaDigital.Services
         }
         public async Task<ResponsePOST> TopPost()
         {
-            Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(getPostAPI)}");
+            Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(getPostAPI)}post");
             var _httpClient = new HttpClient();
             var _json = await _httpClient.GetStringAsync(_getPostAPI);
 

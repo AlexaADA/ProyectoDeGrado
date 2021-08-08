@@ -22,7 +22,7 @@ namespace WebOlayaDigital.Services
 
         public async Task<IEnumerable<Article>> TopNewsNational()
         {
-            Uri _getUrlNewNoticeNationals = new Uri($"{_configuration.GetValue<string>("GetAllApis:NewsAPI")}");
+            Uri _getUrlNewNoticeNationals = new Uri($"{_configuration.GetValue<string>("ConfigUrls:url")}news");
             var _httpClient = new HttpClient();
             var _json = await _httpClient.GetStringAsync(_getUrlNewNoticeNationals);
 

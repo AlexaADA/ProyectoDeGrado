@@ -56,7 +56,7 @@ namespace OlayaDigitalAPI.Controllers
         //}
 
         [HttpGet]
-        public async Task<IActionResult> GetPostWithAudiMedia()
+        public IActionResult GetPostWithAudiMedia()
         {
             var _getPostWithAudiMedia = _postService.GetPostWithAudiMedia();
 
