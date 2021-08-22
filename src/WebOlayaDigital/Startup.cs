@@ -37,6 +37,7 @@ namespace WebOlayaDigital
 
             services.AddTransient<INewsServices, NewsServices>();
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IAdminServices, AdminServices>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

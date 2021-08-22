@@ -13,10 +13,12 @@ namespace WebOlayaDigital.Controllers
     {
         private readonly ILogger<AdminController> _logger;
         private readonly IPostService _postService;
-        public AdminController(ILogger<AdminController> logger, IPostService postService)
+        private readonly IAdminServices _adminServices;
+        public AdminController(ILogger<AdminController> logger, IPostService postService, IAdminServices adminServices)
         {
             _logger = logger;
             _postService = postService;
+            _adminServices = adminServices;
         }
 
         [Route("Administrador")]
@@ -26,14 +28,17 @@ namespace WebOlayaDigital.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreatePOST()
+        public async Task<ActionResult> CreatePOST()
         {
-            return View();
+            Post post = await _adminServices.CategoriesDropList();
+
+            return View(post);
         }
 
         [HttpPost]
-        public ActionResult CreatePOST(Post data)
+        public async Task<ActionResult> CreatePOST(Post data)
         {
+            bool statud = await _adminServices.AddPost(data);
             return View();
         }
 
