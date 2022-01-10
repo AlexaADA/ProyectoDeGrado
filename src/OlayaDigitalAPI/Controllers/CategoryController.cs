@@ -29,7 +29,7 @@ namespace OlayaDigitalAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var _data = _unitOfWork.CategoryRepository.GetAll();
+            IEnumerable<Category> _data = _unitOfWork.CategoryRepository.GetAll();
 
             //Mapeo con AutoMapper
             var _dataMapper = _mapper.Map<IEnumerable<CategoryDto>>(_data);

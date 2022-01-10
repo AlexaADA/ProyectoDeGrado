@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enumeration\" />
+    <Compile Remove="Enumeration\**" />
+    <EmbeddedResource Remove="Enumeration\**" />
+    <None Remove="Enumeration\**" />
   </ItemGroup>
 
 </Project>

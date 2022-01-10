@@ -39,6 +39,10 @@ namespace WebOlayaDigital.Controllers
         public async Task<ActionResult> CreatePOST(Post data)
         {
             bool statud = await _adminServices.AddPost(data);
+
+            //Crear correo pa todos los usuarios registrados.
+            //Logica...
+
             return View();
         }
 

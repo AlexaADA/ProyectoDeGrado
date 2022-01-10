@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
 using OlayaDigital.Core.DTOs;
 using OlayaDigital.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OlayaDigital.Infrastructure.Mappings
 {
@@ -11,10 +8,8 @@ namespace OlayaDigital.Infrastructure.Mappings
     {
         public AutoMapperProfile()
         {
-            CreateMap<Post, PostDto>();
-            CreateMap<PostDto, Post>();
-            CreateMap<Category, CategoryDto>();
-            CreateMap<CategoryDto, Category>();
+            CreateMap<Post, PostDto>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
         }
     }
 }

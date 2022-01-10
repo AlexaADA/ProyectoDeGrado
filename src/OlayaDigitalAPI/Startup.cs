@@ -1,21 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using OlayaDigital.Core.Intarfaces;
 using OlayaDigital.Core.Service;
 using OlayaDigital.Infrastructure.Data;
 using OlayaDigital.Infrastructure.Filters;
 using OlayaDigital.Infrastructure.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OlayaDigitalAPI
 {
@@ -32,7 +26,7 @@ namespace OlayaDigitalAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(options =>
-            {   
+            {
                 //Se registra las excepciones globales
                 options.Filters.Add<GlobalExceptionFilter>();
             });
@@ -54,7 +48,7 @@ namespace OlayaDigitalAPI
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //services.AddTransient<IPostRepository, PostRepository>();
-            
+
             //Agragamos todos nuestros filtros de manera global
             services.AddMvc(options =>
             {
