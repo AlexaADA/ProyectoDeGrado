@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj": {}
+    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj": {}
   },
   "projects": {
-    "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj": {
+    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj",
+        "projectUniqueName": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj",
         "projectName": "OlayaDigital.Unitests",
-        "projectPath": "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj",
-        "packagesPath": "C:\\Users\\JHOTAN\\.nuget\\packages\\",
-        "outputPath": "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Unitests\\obj\\",
+        "projectPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj",
+        "packagesPath": "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\JHOTAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Alexis Guzman R\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -31,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -75,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

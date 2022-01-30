@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nHDn+pM0/Lds1Y2N/eZ/g1flNCL/s09Q9qpd9PLB4JXnpYNj4Aquept76U587sH7Js3IIm54MNZQA0AQ3oAQLQ==",
+  "dgSpecHash": "TmSlKRRLOMlgFjUZ1MW5m4Dgo4F/PaJIrm2ki4PW1ffgIPL4ylvRv7TnnSSVzTBH4QgdYQNJJI9hlsd7P2ZMJQ==",
   "success": true,
-  "projectFilePath": "D:\\VISUAL STUDIO\\OlayaDigital\\src\\OlayaDigital.Infrastructure\\OlayaDigital.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Infrastructure\\OlayaDigital.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\CEO Personal\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\CEO Personal\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
