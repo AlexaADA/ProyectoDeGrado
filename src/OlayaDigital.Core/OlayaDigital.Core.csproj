@@ -5,11 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Enumeration\" />
-    <Folder Include="Intarfaces\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Exceptions\" />
+    <Compile Remove="Enumeration\**" />
+    <EmbeddedResource Remove="Enumeration\**" />
+    <None Remove="Enumeration\**" />
   </ItemGroup>
 
 </Project>

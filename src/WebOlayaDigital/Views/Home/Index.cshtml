@@ -1,0 +1,177 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = "Home Page";
+    string imagen = Url.Content($"~/img/bg3.jpg");
+}
+
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('@imagen')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="title">BIENVENIDOS</h1>
+                <h4>
+                    Las casas de la cultura del municipio de Olaya promueve la lectura, escritura, información, y las diferentes manifestaciones artistico-culturales,convirtiendonos en una institución dinámica y fortaleciondo la integración cultural.
+                    Este es un lugar donde respetamos los derechos fundamentales y el sentir artístico de cada uno, respaldndo iniciativas qe tengan como fin lograr la identidad cultural del municipio.
+                </h4>
+                <br>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
+                    <i class="fa fa-play"></i> Watch video
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised">
+    <div class="container">
+
+
+        <div class="section text-center">
+            <div class="row">
+                <div class="col-md-10 ml-auto mr-auto">
+                    <h2 class="title">Servicios</h2>
+                    <h5 class="description">En esta sessión encontras toda la información de los servicios que ofrece la casa de la cultura de Olaya</h5>
+                </div>
+            </div>
+            <div class="features">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <button type="button" style="border: none; background-color: inherit" data-container="body" data-toggle="popover" data-placement="bottom"
+                                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                            <div class="card m-2" style="width:100%;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Punto de atención</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Sección de publicaciones</h6>
+                                    <p class="card-text">En esta sección podras encontrar todas los post's publicados, los cuales podra actualizar</p>
+                                </div>
+                            </div>
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <button type="button" style="border: none; background-color: inherit" data-container="body" data-toggle="popover" data-placement="bottom"
+                                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                            <div class="card m-2" style="width:100%;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Consulta en Sala</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Sección de publicaciones</h6>
+                                    <p class="card-text">En esta sección podras encontrar todas los post's publicados, los cuales podra actualizar</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-md-4">
+                        <button type="button" style="border: none; background-color: inherit" data-container="body" data-toggle="popover" data-placement="bottom"
+                                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                            <div class="card m-2" style="width:100%;">
+                                <div class="card-body">
+                                    <h4 class="card-title">Prestamos externos</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Sección de publicaciones</h6>
+                                    <p class="card-text">En esta sección podras encontrar todas los post's publicados, los cuales podra actualizar</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section text-center">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Nuestras sedes</h2>
+                    <h5 class="description">El municipio de Olaya cuenta con tres sedes de casa de la cultura</h5>
+                </div>
+            </div>
+            <div class="features">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info">
+                            <img class="img-fluid" src="~/img/olaya.jpg" />
+                            <h4 class="info-title">Olaya</h4>
+                            @*<p> Esta ubicado en el casco urbano del municipio en el parque princial/p>*@
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <img class="img-fluid" src="~/img/sucre.jpg" />
+                            <h4 class="info-title">Sucre</h4>
+                            @*<p>Esta ubicado en el corregimiento de Sucre en el parque principal</p>*@
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <img class="img-fluid" src="~/img/llanadas.jpg" />
+                            <h4 class="info-title">Llanadas</h4>
+                            @*<p> Esta ubicado en el corregimiento de llanadas en el parque principal.</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-contacts">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center title">Noticias</h2>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.Post.Data)
+                {
+                    <div class="col-md-3 mt-4">
+
+                        <div class="card h-100">
+                            @if (item.MediaDto.Count > 0)
+                            {
+                                <img class="card-img-top" src="@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().NameFile" target="_blank" alt="@item.Tittle">
+                            }
+                            else
+                            {
+                                <img class="card-img-top" src="~/img/post/wallpaper.jpeg" target="_blank" alt="@item.Tittle">
+                            }
+                            <div class="card-body">
+                                <h6>@item.Tittle</h6>
+                                <p class="card-text">@item.Description</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="@item.Url" target="_blank" class="btn btn-primary">Ver</a>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="section section-contacts">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center title">Otras noticias</h2>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.Article)
+                {
+                    <div class="col-md-3 mt-4">
+
+                        <div class="card h-100">
+                            <img class="card-img-top" src="@item.UrlToImage" target="_blank" alt="@item.Title">
+                            <div class="card-body">
+                                <h6>@item.Title</h6>
+                                <p class="card-text">@item.Description</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="@item.Url" target="_blank" class="btn btn-primary">Ver</a>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

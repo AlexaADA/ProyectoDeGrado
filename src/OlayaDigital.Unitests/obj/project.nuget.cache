@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "eGVxQc43pGEzbvr1RqFVb5SUgOidZN02V30py9/WN0CI/6qB/ZLdTCXBYiM4vhhipXLxw8XOovM5UZrFC+Pp+g==",
+=======
+  "dgSpecHash": "HjoAxw1xboIoEYXf+jtK8x2i+TADRuivoDF7Vv7I/04nLsoqZrgW6ohqE1XtYa7TfPDOHON/japCFU4hPvYozA==",
+>>>>>>> origin/Web
   "success": true,
   "projectFilePath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Unitests\\OlayaDigital.Unitests.csproj",
   "expectedPackageFiles": [

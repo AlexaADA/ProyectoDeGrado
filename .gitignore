@@ -3,4 +3,8 @@
 *.int
 *.lk
 *.zip
+<<<<<<< HEAD
 *.lock
+=======
+*.vs
+>>>>>>> origin/Web
