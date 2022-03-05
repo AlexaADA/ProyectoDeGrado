@@ -15,3 +15,13 @@ D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Cor
 D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.dll
 D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.pdb
 D:\VISUAL STUDIO\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.csproj.AssemblyReference.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\bin\Debug\netstandard2.0\OlayaDigital.Core.deps.json
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\bin\Debug\netstandard2.0\OlayaDigital.Core.dll
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\bin\Debug\netstandard2.0\OlayaDigital.Core.pdb
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.AssemblyInfoInputs.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.AssemblyInfo.cs
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.csproj.CoreCompileInputs.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.dll
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.pdb
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Core\obj\Debug\netstandard2.0\OlayaDigital.Core.csproj.AssemblyReference.cache

@@ -11,32 +11,32 @@ namespace OlayaDigital.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Media> builder)
         {
-            builder.ToTable("Multimedia");
+            //builder.ToTable("Multimedia");
 
-            builder.HasKey(x => x.Id);
+            //builder.HasKey(x => x.Id);
 
-            builder.Property(e => e.FileName).IsRequired()
-            .HasColumnName("NombreArchivo");
+            //builder.Property(e => e.FileName).IsRequired()
+            //.HasColumnName("NombreArchivo");
 
-            builder.Property(e => e.Extension).IsRequired()
-            .HasColumnName("Extension");
+            //builder.Property(e => e.Extension).IsRequired()
+            //.HasColumnName("Extension");
 
-            builder.Property(e => e.FileSize).IsRequired()
-            .HasColumnName("Peso");
+            //builder.Property(e => e.FileSize).IsRequired()
+            //.HasColumnName("Peso");
 
-            builder.Property(e => e.Route).IsRequired()
-            .HasColumnName("Ruta");
+            //builder.Property(e => e.Route).IsRequired()
+            //.HasColumnName("Ruta");
 
-            builder.Property(e => e.IdPost).IsRequired()
-            .HasColumnName("IdPublicacion");
+            //builder.Property(e => e.IdPost).IsRequired()
+            //.HasColumnName("IdPublicacion");
 
-            builder.Property(e => e.Cover).IsRequired()
-            .HasColumnName("Portada");
+            //builder.Property(e => e.Cover).IsRequired()
+            //.HasColumnName("Portada");
 
-            builder.HasOne(d => d.Post)
-                .WithMany(p => p.Medias)
-                .HasForeignKey(d => d.IdPost)
-                .HasConstraintName("FK__Multimedi__IdPub__182C9B23");
+            //builder.HasOne(d => d.Post)
+            //    .WithMany(p => p.Medias)
+            //    .HasForeignKey(d => d.IdPost)
+            //    .HasConstraintName("FK__Multimedi__IdPub__182C9B23");
         }
     }
 }

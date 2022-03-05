@@ -30,12 +30,12 @@ namespace OlayaDigital.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new AuditConfig());
-            modelBuilder.ApplyConfiguration(new CategoryConfig());
-            modelBuilder.ApplyConfiguration(new CommentConfig());
-            modelBuilder.ApplyConfiguration(new MediaConfig());
-            modelBuilder.ApplyConfiguration(new PostConfig());
-            modelBuilder.ApplyConfiguration(new UserConfig());
+            //modelBuilder.ApplyConfiguration(new AuditConfig());
+            //modelBuilder.ApplyConfiguration(new CategoryConfig());
+            //modelBuilder.ApplyConfiguration(new CommentConfig());
+            //modelBuilder.ApplyConfiguration(new MediaConfig());
+            //modelBuilder.ApplyConfiguration(new PostConfig());
+            //modelBuilder.ApplyConfiguration(new UserConfig());
         }
     }
 }

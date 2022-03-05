@@ -11,18 +11,18 @@ namespace OlayaDigital.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("Usuario");
+            //builder.ToTable("Usuario");
 
-            builder.HasKey(x => x.Id);
+            //builder.HasKey(x => x.Id);
 
-            builder.Property(e => e.Email).IsRequired()
-            .HasColumnName("Correo");
+            //builder.Property(e => e.Email).IsRequired()
+            //.HasColumnName("Correo");
 
-            builder.Property(e => e.Name).IsRequired()
-            .HasColumnName("Nombre");
+            //builder.Property(e => e.Name).IsRequired()
+            //.HasColumnName("Nombre");
 
-            builder.Property(e => e.Phone).IsRequired()
-            .HasColumnName("Telefono");
+            //builder.Property(e => e.Phone).IsRequired()
+            //.HasColumnName("Telefono");
         }
     }
 }

@@ -9,12 +9,6 @@ namespace OlayaDigital.Core.Entities
 {
     public partial class User : BaseEntity
     {
-        public User()
-        {
-            Comments = new HashSet<Comment>();
-            Posts = new HashSet<Post>();
-        }
-
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

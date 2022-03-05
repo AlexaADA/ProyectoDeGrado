@@ -9,11 +9,6 @@ namespace OlayaDigital.Core.Entities
 {
     public partial class Category : BaseEntity
     {
-        public Category()
-        {
-            Posts = new HashSet<Post>();
-        }
-
         public string Name { get; set; }
         public string Url { get; set; }
 

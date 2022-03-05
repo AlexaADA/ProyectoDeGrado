@@ -11,14 +11,14 @@ namespace OlayaDigital.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.ToTable("Categoria");
+            //builder.ToTable("Categoria");
 
-            builder.HasKey(x => x.Id);
+            //builder.HasKey(x => x.Id);
 
-            builder.Property(e => e.Name).IsRequired()
-            .HasColumnName("Nombre");
+            //builder.Property(e => e.Name).IsRequired()
+            //.HasColumnName("Nombre");
 
-            builder.Property(e => e.Url).IsRequired();
+            //builder.Property(e => e.Url).IsRequired();
         }
     }
 }

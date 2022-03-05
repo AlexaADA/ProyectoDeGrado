@@ -9,13 +9,6 @@ namespace OlayaDigital.Core.Entities
 {
     public partial class Post : BaseEntity
     {
-        public Post()
-        {
-            Audits = new HashSet<Audit>();
-            Coments = new HashSet<Comment>();
-            Medias = new HashSet<Media>();
-        }
-
         public string Tittle { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }

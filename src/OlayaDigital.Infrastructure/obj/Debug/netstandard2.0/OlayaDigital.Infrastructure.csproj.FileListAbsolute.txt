@@ -21,3 +21,16 @@ D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Inf
 D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
 D:\VISUAL STUDIO\OlayaDigital\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb
 D:\VISUAL STUDIO\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.deps.json
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Core.dll
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Core.pdb
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.AssemblyInfo.cs
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.CopyComplete
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
+C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb

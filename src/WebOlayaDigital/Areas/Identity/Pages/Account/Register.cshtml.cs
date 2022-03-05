@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,25 +22,26 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        //private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            //IEmailSender emailSender, 
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
+            //_emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
         public InputModel Input { get; set; }
-
         public string ReturnUrl { get; set; }
-
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
         public class InputModel
@@ -75,20 +77,26 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    if (_roleManager.Roles.Any())
+                        CreateRoles();
+
+                    await AssignRoles(user);
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    //Configurar SendGrid
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -109,5 +117,43 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
+        private void CreateRoles()
+        {
+            List<IdentityRole> identityRoles = new List<IdentityRole>();
+
+            IdentityRole UserApp = new IdentityRole();
+            UserApp.Id = Guid.NewGuid().ToString();
+            UserApp.Name = "UserApp";
+            UserApp.NormalizedName = "UserApp".ToUpper();
+            UserApp.ConcurrencyStamp = Guid.NewGuid().ToString();
+            identityRoles.Add(UserApp);
+
+            IdentityRole Admin = new IdentityRole();
+            Admin.Id = Guid.NewGuid().ToString();
+            Admin.Name = "Admin";
+            Admin.NormalizedName = "Admin".ToUpper();
+            Admin.ConcurrencyStamp = Guid.NewGuid().ToString();
+            identityRoles.Add(Admin);
+
+            IdentityRole SuperAdmin = new IdentityRole();
+            SuperAdmin.Id = Guid.NewGuid().ToString();
+            SuperAdmin.Name = "SuperAdmin";
+            SuperAdmin.NormalizedName = "SuperAdmin".ToUpper();
+            SuperAdmin.ConcurrencyStamp = Guid.NewGuid().ToString();
+            identityRoles.Add(SuperAdmin);
+
+            identityRoles.ForEach(roles => { _roleManager.CreateAsync(roles); });
+
+        }
+
+        private async Task AssignRoles(IdentityUser user)
+        {
+            await _userManager.AddToRoleAsync(user, "UserApp");
+            await _userManager.AddToRoleAsync(user, "Admin");
+            await _userManager.AddToRoleAsync(user, "SuperAdmin");
+            _logger.LogInformation("Se creo o se le asigno un rol");
+        }
     }
+
 }
