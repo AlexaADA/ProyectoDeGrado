@@ -37,7 +37,7 @@ namespace WebOlayaDigital.Services
             return _post;
         }
 
-        public async Task<bool> AddPost(Post requestPost)
+        public async Task<string> AddPost(Post requestPost)
         {
             string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}post";
 
@@ -59,7 +59,9 @@ namespace WebOlayaDigital.Services
                 throw new Exception($"statusCode: {response.StatusCode}, messageException: {response.Content.ReadAsStringAsync().Result}");
             }
 
-            return true;
+            _jsonData = await response.Content.ReadAsStringAsync();
+            ResponsePost responsePost = JsonConvert.DeserializeObject<ResponsePost>(_jsonData);
+            return responsePost.Data.Id.ToString();
         }
 
 

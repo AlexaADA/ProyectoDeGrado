@@ -15,6 +15,5 @@ namespace OlayaDigital.Core.Entities
         public float FileSize { get; set; }
         public string Route { get; set; }
         public bool Cover { get; set; }
-        public virtual Post Post { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using OlayaDigital.Core.Entities;
 using OlayaDigital.Core.Intarfaces;
 using OlayaDigitalAPI.Response;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OlayaDigitalAPI.Controllers
@@ -15,13 +16,14 @@ namespace OlayaDigitalAPI.Controllers
     {
         private readonly IPostService _postService;
         private readonly IMapper _mapper;
-        //private readonly IRepository _postRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
         public PostController(IPostService postService,
-            IMapper mapper)
+            IMapper mapper, IUnitOfWork unitOfWork)
         {
             _postService = postService;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -56,7 +58,7 @@ namespace OlayaDigitalAPI.Controllers
         //}
 
         [HttpGet]
-        public IActionResult GetPostWithAudiMedia()
+        public async Task<IActionResult> GetPostWithAudiMedia()
         {
             var _getPostWithAudiMedia = _postService.GetPostWithAudiMedia();
 
@@ -76,42 +78,13 @@ namespace OlayaDigitalAPI.Controllers
                     _getPostWithTableRelation.IdCategory = item.IdCategory;
                     _getPostWithTableRelation.IdUser = item.IdUser;
 
-                    List<CommentDto> commentList = new List<CommentDto>();
-                    foreach (var item1 in item.Coments)
-                    {
-                        CommentDto commentDto = new CommentDto();
-                        commentDto.Id = item1.Id;
-                        commentDto.Description = item1.Description;
-                        commentDto.IdPost = item1.IdPost;
-                        commentDto.IdUser = item1.IdUser;
-                        commentList.Add(commentDto);
-                    }
-                    _getPostWithTableRelation.Comments = commentList;
+                    _getPostWithTableRelation.Comments = _mapper.Map<List<CommentDto>>(item.Coments);
+                    _getPostWithTableRelation.AuditDto = _mapper.Map<List<AuditDto>>(item.Audits);
 
-                    List<AuditDto> auditList = new List<AuditDto>();
-                    foreach (var item1 in item.Audits)
-                    {
-                        AuditDto auditDto = new AuditDto();
-                        auditDto.DateCreate = item1.DateCreate;
-                        auditDto.DateUpdate = item1.DateUpdate;
-                        auditDto.IdPost = item1.IdPost;
-                        auditList.Add(auditDto);
-                    }
-                    _getPostWithTableRelation.AuditDto = auditList;
+                    var mediaUnitOfWork = _unitOfWork.MediaRepository.GetAll()
+                        .Where(x => x.IdPost != null && x.IdPost == item.Id && x.Cover == true);
+                    _getPostWithTableRelation.MediaDto = _mapper.Map<List<MediaDto>>(mediaUnitOfWork);
 
-                    List<MediaDto> mediaDtosList = new List<MediaDto>();
-                    foreach (var item1 in item.Medias)
-                    {
-                        MediaDto media = new MediaDto();
-                        media.FileName = item1.FileName;
-                        media.IdPost = item1.IdPost;
-                        media.Extension = item1.Extension;
-                        media.FileSize = item1.FileSize;
-                        media.Route = item1.Route;
-                        media.Cover = item1.Cover;
-                        mediaDtosList.Add(media);
-                    }
-                    _getPostWithTableRelation.MediaDto = mediaDtosList;
                     _getPostWithTableRelationList.Add(_getPostWithTableRelation);
                 }
             }

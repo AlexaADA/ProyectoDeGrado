@@ -39,6 +39,8 @@ namespace WebOlayaDigital
             services.AddTransient<INewsServices, NewsServices>();
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IAdminServices, AdminServices>();
+            services.AddTransient<IMediaServices, MediaServices>();
+
             services.AddTransient<IUploadedFileIIS, UploadedFileIIS>();
             services.AddTransient<IConfigHttp, ConfigHttp>();
 

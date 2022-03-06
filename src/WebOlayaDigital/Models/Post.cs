@@ -6,6 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebOlayaDigital.Models
 {
+    public class ResponsePost
+    {
+        public string Msg { get; set; }
+        public Post Data { get; set; }
+    }
+
     public class Post
     {
         public int Id { get; set; }

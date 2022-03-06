@@ -127,7 +127,7 @@
                         <div class="card h-100">
                             @if (item.MediaDto.Count > 0)
                             {
-                                <img class="card-img-top" src="@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().NameFile" target="_blank" alt="@item.Tittle">
+                                <img class="card-img-top" src="~/img/publicaciones/@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().Route" target="_blank" alt="@item.Tittle">
                             }
                             else
                             {

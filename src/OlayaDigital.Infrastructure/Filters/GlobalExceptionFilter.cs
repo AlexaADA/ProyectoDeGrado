@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using OlayaDigital.Core.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
 namespace OlayaDigital.Infrastructure.Filters
 {
@@ -29,7 +26,13 @@ namespace OlayaDigital.Infrastructure.Filters
 
                 context.Result = new BadRequestObjectResult(_json);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                context.ExceptionHandled = true;    
+                context.ExceptionHandled = true;
+            }
+            else
+            {
+                context.Result = new BadRequestObjectResult(context.Exception);
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                context.ExceptionHandled = true;
             }
         }
     }
