@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebOlayaDigital.Interfaces;
 using WebOlayaDigital.Models;
+using WebOlayaDigital.Services.Commons;
 
 namespace WebOlayaDigital.Services
 {
@@ -16,11 +17,13 @@ namespace WebOlayaDigital.Services
     {
         #region "Field"
         private readonly IConfiguration _configuration;
+        private readonly IConfigHttp _configHttp;
         #endregion
 
-        public AdminServices(IConfiguration configuration)
+        public AdminServices(IConfiguration configuration, IConfigHttp configHttp)
         {
             _configuration = configuration;
+            _configHttp = configHttp;
         }
 
         public async Task<Post> CategoriesDropList()
@@ -42,46 +45,14 @@ namespace WebOlayaDigital.Services
             post.Categories = selectListItem;
             return post;
         }
-
-        public async Task<bool> AddPost(Post requestPost)
-        {
-            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}post";
-
-            PostDto post = new PostDto();
-            post.Description = requestPost.Description;
-            post.Tittle = requestPost.Tittle;
-            post.Url = "Esta es una url";
-            post.Id = requestPost.Id;
-            post.IdCategory =  Convert.ToInt16(requestPost.Category);
-            post.IdUser = 1;
-
-
-            string _jsonData = JsonConvert.SerializeObject(post);
-            HttpResponseMessage response = await GetConfigHttp().PostAsync(url,
-                 new StringContent(_jsonData, Encoding.UTF8, "application/json"));
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception($"statusCode: {response.StatusCode}, messageException: {response.Content.ReadAsStringAsync().Result}");
-            }
-
-            return true;
-        }
+ 
 
         #region "Private"
-
-        public HttpClient GetConfigHttp()
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Content-Transfer-Encoding", "UTF-8");
-            //client.DefaultRequestHeaders.Add("x-api-key", aFKey);
-            return client;
-        }
 
         private async Task<CategoryResponse> Categories()
         {
             string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}category";
-            var response = await GetConfigHttp().GetAsync(url);
+            var response = await _configHttp.GetConfigHttp().GetAsync(url);
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception($"statusCode: {response.StatusCode}, messageException: {await response.Content.ReadAsStringAsync()}");

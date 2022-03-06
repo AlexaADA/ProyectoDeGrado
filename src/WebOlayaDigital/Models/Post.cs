@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebOlayaDigital.Models
 {
@@ -9,6 +10,7 @@ namespace WebOlayaDigital.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Titulo")]
         [Required(ErrorMessage = "El campo es requerido")]
         public string Tittle { get; set; }
 
@@ -23,9 +25,11 @@ namespace WebOlayaDigital.Models
         public string Category { get; set; }
 
         //[Required(ErrorMessage = "El campo es requerido")]
+        [NotMapped]
         [Display(Name = "Imagen")]
         public IFormFile File { get; set; }
 
+        [NotMapped]
         public List<SelectListItem> Categories { get; set; }
     }
 }

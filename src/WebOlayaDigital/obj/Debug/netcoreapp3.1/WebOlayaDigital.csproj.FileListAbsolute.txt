@@ -572,7 +572,6 @@ C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlaya
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
-C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_StatusMessage.cshtml.g.cs
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs

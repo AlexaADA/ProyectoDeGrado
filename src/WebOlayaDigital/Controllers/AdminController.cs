@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using WebOlayaDigital.Interfaces;
@@ -36,7 +35,6 @@ namespace WebOlayaDigital.Controllers
         public async Task<ActionResult> CreatePOST()
         {
             Post post = await _adminServices.CategoriesDropList();
-
             return View(post);
         }
 
@@ -44,12 +42,12 @@ namespace WebOlayaDigital.Controllers
         public async Task<ActionResult> CreatePOST(Post data)
         {
             string name = UploadImage(data.File, "publicaciones");
-            bool statud = await _adminServices.AddPost(data);
+            bool statud = await _postService.AddPost(data);
 
             //Crear correo pa todos los usuarios registrados.
             //Logica...
 
-            return RedirectToAction("index","home");
+            return RedirectToAction("index", "home");
         }
 
 
@@ -59,7 +57,7 @@ namespace WebOlayaDigital.Controllers
             if (file.Length >= 300000)
                 throw new Exception("La imagen cargada no puede exceder los 300 kb, cargue una imagen más pequeña.");
 
-            if (file.ContentType == ".jpg" || file.ContentType == ".png" || file.ContentType == ".jpeg")
+            if (!SupportedExtensions(file.ContentType))
                 throw new Exception("La imagen no tiene el formato correcto.");
 
             try
@@ -68,9 +66,26 @@ namespace WebOlayaDigital.Controllers
             }
             catch (Exception)
             {
-                throw new Exception("Uploaded file is not recognized as an image.");
+                throw new Exception("El archivo subido no se reconoce como una imagen.");
             }
             return nameImagen;
         }
+
+        #region "Internal"
+        internal bool SupportedExtensions(string contentType)
+        {
+            List<string> supportedExtensions = new List<string>()
+            {
+                "image/jpeg",
+                "image/jpg",
+                "image/png"
+            };
+
+            if (supportedExtensions.Count(supported => supported == contentType) > 0)
+                return true;
+
+            return false;
+        }
+        #endregion
     }
 }

@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebOlayaDigital.Interfaces;
 using WebOlayaDigital.Services;
+using WebOlayaDigital.Services.Commons;
 
 namespace WebOlayaDigital
 {
@@ -38,6 +39,8 @@ namespace WebOlayaDigital
             services.AddTransient<INewsServices, NewsServices>();
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IAdminServices, AdminServices>();
+            services.AddTransient<IUploadedFileIIS, UploadedFileIIS>();
+            services.AddTransient<IConfigHttp, ConfigHttp>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

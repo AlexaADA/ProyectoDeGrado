@@ -182,11 +182,14 @@ namespace WebOlayaDigital.Services.Commons
         {
             string uniqueFileName;
 
-            string folderPath = "images";
-            if (!Directory.Exists($"{_hostingEnvironment.WebRootPath}{folderPath}"))
+            string folderPath = "img";
+            if (!Directory.Exists($"{_hostingEnvironment.WebRootPath}\\{folderPath}"))
                 Directory.CreateDirectory($"{_hostingEnvironment.WebRootPath}{folderPath}");
             
             string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, $"{folderPath}\\{account}");
+            if (!Directory.Exists($"{_hostingEnvironment.WebRootPath}\\{folderPath}\\{account}"))
+                Directory.CreateDirectory($"{_hostingEnvironment.WebRootPath}\\{folderPath}\\{account}");
+
             uniqueFileName = namefile + "." + Path.GetExtension(file.FileName).Substring(1);
             string filePath = Path.Combine(uploadsFolder, uniqueFileName);
             using (var fileStream = new FileStream(filePath, FileMode.Create))

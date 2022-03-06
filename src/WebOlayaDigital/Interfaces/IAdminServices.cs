@@ -6,6 +6,5 @@ namespace WebOlayaDigital.Interfaces
     public interface IAdminServices
     {
         Task<Post> CategoriesDropList();
-        Task<bool> AddPost(Post requestPost);
     }
 }
