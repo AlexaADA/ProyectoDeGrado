@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Cliente", "01-Cliente", "{5A2E57E2-4C0D-489D-AF29-6096A97AB78B}"
 EndProject
@@ -17,13 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlayaDigital.Core", "src\Ol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlayaDigital.Infrastructure", "src\OlayaDigital.Infrastructure\OlayaDigital.Infrastructure.csproj", "{DBDF1384-3363-4A4F-BD6F-7962A58301B3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Tests", "00-Tests", "{C3EDFB4D-776A-419D-B949-148453408418}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlayaDigital.Unitests", "src\OlayaDigital.Unitests\OlayaDigital.Unitests.csproj", "{A88848AA-0083-4B7A-AB4B-BD59053C699F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlayaDigital.IntegrationTests", "src\OlayaDigital.IntegrationTests\OlayaDigital.IntegrationTests.csproj", "{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebOlayaDigital", "src\WebOlayaDigital\WebOlayaDigital.csproj", "{A0265577-E5FE-403B-A555-FF7F9DB72421}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebOlayaDigital", "src\WebOlayaDigital\WebOlayaDigital.csproj", "{A0265577-E5FE-403B-A555-FF7F9DB72421}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +37,6 @@ Global
 		{DBDF1384-3363-4A4F-BD6F-7962A58301B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBDF1384-3363-4A4F-BD6F-7962A58301B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBDF1384-3363-4A4F-BD6F-7962A58301B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A88848AA-0083-4B7A-AB4B-BD59053C699F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A88848AA-0083-4B7A-AB4B-BD59053C699F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A88848AA-0083-4B7A-AB4B-BD59053C699F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A88848AA-0083-4B7A-AB4B-BD59053C699F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0265577-E5FE-403B-A555-FF7F9DB72421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0265577-E5FE-403B-A555-FF7F9DB72421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0265577-E5FE-403B-A555-FF7F9DB72421}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,8 +49,6 @@ Global
 		{F2AA2E56-8611-4F2F-9624-44D45C8DE3EF} = {1866C499-4D7F-4BCD-82DF-BEF91DEA32F3}
 		{3588B087-38F6-4EA4-8367-16C69DCE41F1} = {100A1A3E-5CAD-44AA-BB50-615AF92D2447}
 		{DBDF1384-3363-4A4F-BD6F-7962A58301B3} = {2F13AB0E-FDFA-4F6C-8189-420874095763}
-		{A88848AA-0083-4B7A-AB4B-BD59053C699F} = {C3EDFB4D-776A-419D-B949-148453408418}
-		{6FC03EF9-9C5D-4CCF-94C5-DC4DD4620D38} = {C3EDFB4D-776A-419D-B949-148453408418}
 		{A0265577-E5FE-403B-A555-FF7F9DB72421} = {5A2E57E2-4C0D-489D-AF29-6096A97AB78B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
