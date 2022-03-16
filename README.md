@@ -15,3 +15,4 @@ Este proyecto es un sistema de información para la casa de la cultura del munic
 - Sql Server (gratuita)
 
 - En el AppSetting el key DefaultConnection es necesario que cambie el nombre del motor de la base de datos en ambos proyectos (WebOlayaDigital y OlayaDigitalAPI)
+- Importante realizar un migración a la base de datos para crearla. Más información. https://medium.com/@rvazquezmiguel/migraciones-con-entity-framework-core-3ae6379b1ca8
