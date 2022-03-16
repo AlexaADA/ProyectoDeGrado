@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using WebOlayaDigital.Interfaces;
 using WebOlayaDigital.Services;
 using WebOlayaDigital.Services.Commons;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace WebOlayaDigital
 {
@@ -34,7 +35,9 @@ namespace WebOlayaDigital
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<INewsServices, NewsServices>();
             services.AddTransient<IPostService, PostService>();
@@ -43,6 +46,7 @@ namespace WebOlayaDigital
 
             services.AddTransient<IUploadedFileIIS, UploadedFileIIS>();
             services.AddTransient<IConfigHttp, ConfigHttp>();
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

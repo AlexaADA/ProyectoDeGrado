@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\WebOlayaDigital\\WebOlayaDigital.csproj": {}
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\WebOlayaDigital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\WebOlayaDigital\\WebOlayaDigital.csproj": {
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\WebOlayaDigital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\WebOlayaDigital\\WebOlayaDigital.csproj",
+        "projectUniqueName": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\WebOlayaDigital.csproj",
         "projectName": "WebOlayaDigital",
-        "projectPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\WebOlayaDigital\\WebOlayaDigital.csproj",
-        "packagesPath": "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\WebOlayaDigital\\obj\\",
+        "projectPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\WebOlayaDigital.csproj",
+        "packagesPath": "C:\\Users\\Jhota\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alexis Guzman R\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jhota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,6 +71,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.26.0, )"
             }
           },
           "imports": [

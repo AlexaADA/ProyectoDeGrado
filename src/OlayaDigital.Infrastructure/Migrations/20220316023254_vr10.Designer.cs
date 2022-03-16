@@ -10,8 +10,8 @@ using OlayaDigital.Infrastructure.Data;
 namespace OlayaDigital.Infrastructure.Migrations
 {
     [DbContext(typeof(db_OlayaDigitalContext))]
-    [Migration("20220130205006_MGT01")]
-    partial class MGT01
+    [Migration("20220316023254_vr10")]
+    partial class vr10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -209,7 +209,7 @@ namespace OlayaDigital.Infrastructure.Migrations
 
             modelBuilder.Entity("OlayaDigital.Core.Entities.Media", b =>
                 {
-                    b.HasOne("OlayaDigital.Core.Entities.Post", "Post")
+                    b.HasOne("OlayaDigital.Core.Entities.Post", null)
                         .WithMany("Medias")
                         .HasForeignKey("PostId");
                 });
