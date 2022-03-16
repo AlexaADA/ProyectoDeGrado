@@ -53,6 +53,11 @@ namespace WebOlayaDigital.Controllers
             return RedirectToAction("index", "home");
         }
 
+        [HttpGet]
+        public ActionResult Mision() => View();
+
+        [HttpGet]
+        public ActionResult Vision() => View();
 
         public MediaDto UploadImage(IFormFile file, string account, string idPost)
         {

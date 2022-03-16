@@ -207,7 +207,7 @@ namespace OlayaDigital.Infrastructure.Migrations
 
             modelBuilder.Entity("OlayaDigital.Core.Entities.Media", b =>
                 {
-                    b.HasOne("OlayaDigital.Core.Entities.Post", "Post")
+                    b.HasOne("OlayaDigital.Core.Entities.Post", null)
                         .WithMany("Medias")
                         .HasForeignKey("PostId");
                 });

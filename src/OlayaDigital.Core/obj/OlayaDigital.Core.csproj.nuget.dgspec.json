@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj": {}
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj": {
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj",
         "projectName": "OlayaDigital.Core",
-        "projectPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj",
-        "packagesPath": "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.Core\\obj\\",
+        "projectPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.Core\\OlayaDigital.Core.csproj",
+        "packagesPath": "C:\\Users\\Jhota\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alexis Guzman R\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jhota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

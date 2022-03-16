@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-WebOlayaDigital-19B0B35A-D660-49A3-8F91-5F9AA0F86B8E")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebOlayaDigital")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]

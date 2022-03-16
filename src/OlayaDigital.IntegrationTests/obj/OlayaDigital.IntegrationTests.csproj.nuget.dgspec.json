@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj": {}
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj": {
+    "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj",
+        "projectUniqueName": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj",
         "projectName": "OlayaDigital.IntegrationTests",
-        "projectPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj",
-        "packagesPath": "C:\\Users\\Alexis Guzman R\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexis Guzman R\\Source\\Repos\\JhotamsDeveloper\\OlayaDigital\\src\\OlayaDigital.IntegrationTests\\obj\\",
+        "projectPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.IntegrationTests\\OlayaDigital.IntegrationTests.csproj",
+        "packagesPath": "C:\\Users\\Jhota\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigital.IntegrationTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alexis Guzman R\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jhota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

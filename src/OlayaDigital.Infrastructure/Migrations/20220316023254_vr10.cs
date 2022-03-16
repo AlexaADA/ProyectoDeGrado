@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OlayaDigital.Infrastructure.Migrations
 {
-    public partial class MGT01 : Migration
+    public partial class vr10 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

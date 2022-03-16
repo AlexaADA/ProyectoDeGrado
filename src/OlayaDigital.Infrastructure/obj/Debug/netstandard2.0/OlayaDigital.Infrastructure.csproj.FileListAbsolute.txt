@@ -34,3 +34,16 @@ C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDig
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.CopyComplete
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
 C:\Users\Alexis Guzman R\Source\Repos\JhotamsDeveloper\OlayaDigital\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.deps.json
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Core.dll
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\bin\Debug\netstandard2.0\OlayaDigital.Core.pdb
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.AssemblyInfo.cs
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.csproj.CopyComplete
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.dll
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigital.Infrastructure\obj\Debug\netstandard2.0\OlayaDigital.Infrastructure.pdb
