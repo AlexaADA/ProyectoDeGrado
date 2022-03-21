@@ -4,6 +4,7 @@ using OlayaDigital.Core.DTOs;
 using OlayaDigital.Core.Entities;
 using OlayaDigital.Core.Intarfaces;
 using OlayaDigitalAPI.Response;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -51,7 +52,8 @@ namespace OlayaDigitalAPI.Controllers
         //    var _postMapper = _mapper.Map<IEnumerable<PostDto>>(_post);
 
         //    //Estructurar el response del api
-        //    var _response = new ApiResponse<IEnumerable<PostDto>>(_postMapper) {
+        //    var _response = new ApiResponse<IEnumerable<PostDto>>(_postMapper)
+        //    {
         //        Msg = "Resultado de la busqueda"
         //    };
         //    return Ok(_response);
@@ -95,17 +97,19 @@ namespace OlayaDigitalAPI.Controllers
             {
                 Msg = "Resultado de la busqueda"
             };
+
+            await Task.CompletedTask;
             return Ok(_response);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPost(int id)
         {
-            var post = await _postService.GetById(id);
-            var postDto = _mapper.Map<PostDto>(post);
+            UserwithAllTheInformationDto postDto = await _postService.UserwithAllTheInformation(id);
 
             //Estructurar el response del api
-            var _response = new ApiResponse<PostDto>(postDto);
+            ApiResponse<UserwithAllTheInformationDto> _response = new ApiResponse<UserwithAllTheInformationDto>(postDto);
+            _response.Msg = "Detalle de la informacion";
             return Ok(_response);
         }
 

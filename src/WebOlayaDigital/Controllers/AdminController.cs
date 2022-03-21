@@ -36,6 +36,7 @@ namespace WebOlayaDigital.Controllers
         [HttpGet]
         public async Task<ActionResult> CreatePOST()
         {
+            ViewBag.Error = string.Empty;
             Post post = await _adminServices.CategoriesDropList();
             return View(post);
         }
@@ -43,6 +44,29 @@ namespace WebOlayaDigital.Controllers
         [HttpPost]
         public async Task<ActionResult> CreatePOST(Post data)
         {
+            var categories = await _adminServices.CategoriesDropList();
+            int ThreeMegaBytes = 3 * 1024 * 1024;
+
+            if (data.File == null)
+            {
+                ViewBag.Error = "La imagen no tiene el formato correcto.";
+                data.Categories = categories.Categories;
+                return View(data);
+            }
+            else if (string.IsNullOrEmpty(SupportedExtensions(data.File.ContentType)))
+            {
+                ViewBag.Error = "La imagen es obligatoria.";
+                data.Categories = categories.Categories;
+                return View(data);
+
+            }
+            else if (data.File.Length > ThreeMegaBytes)
+            {
+                ViewBag.Error = "La imagen cargada no puede exceder los 300 kb, cargue una imagen más pequeña.";
+                data.Categories = categories.Categories;
+                return View(data);
+            }
+
             string idPost = await _postService.AddPost(data);
             var inf = UploadImage(data.File, "publicaciones", idPost);
             await _mediaServices.Save(inf);
@@ -59,15 +83,12 @@ namespace WebOlayaDigital.Controllers
         [HttpGet]
         public ActionResult Vision() => View();
 
-        public MediaDto UploadImage(IFormFile file, string account, string idPost)
+
+        #region "Internal"
+        private MediaDto UploadImage(IFormFile file, string account, string idPost)
         {
             string nameImagen = Guid.NewGuid().ToString();
             string uniqueFileName;
-            if (file.Length >= 300000)
-                throw new Exception("La imagen cargada no puede exceder los 300 kb, cargue una imagen más pequeña.");
-
-            if (string.IsNullOrEmpty(SupportedExtensions(file.ContentType)))
-                throw new Exception("La imagen no tiene el formato correcto.");
 
             try
             {
@@ -88,8 +109,6 @@ namespace WebOlayaDigital.Controllers
                 FileSize = file.Length
             };
         }
-
-        #region "Internal"
         internal string SupportedExtensions(string contentType)
         {
             List<string> supportedExtensions = new List<string>()

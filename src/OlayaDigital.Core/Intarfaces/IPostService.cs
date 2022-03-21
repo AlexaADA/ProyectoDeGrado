@@ -15,5 +15,6 @@ namespace OlayaDigital.Core.Intarfaces
         Task<bool> UpdatePost(Post post);
         Task<bool> DeletePost(int id);
         IEnumerable<Post> GetPostWithAudiMedia();
+        Task<UserwithAllTheInformationDto> UserwithAllTheInformation(int id);
     }
 }

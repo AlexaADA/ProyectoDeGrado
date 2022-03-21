@@ -127,18 +127,17 @@
                         <div class="card h-100">
                             @if (item.MediaDto.Count > 0)
                             {
-                                <img class="card-img-top" src="~/img/publicaciones/@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().Route" target="_blank" alt="@item.Tittle">
+                                <img class="card-img-top" src="~/img/publicaciones/@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().Route" alt="@item.Tittle">
                             }
                             else
                             {
-                                <img class="card-img-top" src="~/img/post/wallpaper.jpeg" target="_blank" alt="@item.Tittle">
+                                <img class="card-img-top" src="~/img/publicaciones/wallpaper.jpeg" target="_blank" alt="@item.Tittle">
                             }
                             <div class="card-body">
                                 <h6>@item.Tittle</h6>
-                                <p class="card-text">@item.Description</p>
                             </div>
                             <div class="card-footer">
-                                <a href="@item.Url" target="_blank" class="btn btn-primary">Ver</a>
+                                <a class="btn btn-primary" asp-controller="home" asp-action="Detail" asp-route-id="@item.Id"  target="_blank">Ver</a>
                             </div>
                         </div>
 
@@ -147,31 +146,7 @@
             </div>
         </div>
 
-        <div class="section section-contacts">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center title">Otras noticias</h2>
-                </div>
-            </div>
-            <div class="row">
-                @foreach (var item in Model.Article)
-                {
-                    <div class="col-md-3 mt-4">
-
-                        <div class="card h-100">
-                            <img class="card-img-top" src="@item.UrlToImage" target="_blank" alt="@item.Title">
-                            <div class="card-body">
-                                <h6>@item.Title</h6>
-                                <p class="card-text">@item.Description</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="@item.Url" target="_blank" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-
-                    </div>
-                }
-            </div>
-        </div>
     </div>
+    <br />
+    <br />
 </div>

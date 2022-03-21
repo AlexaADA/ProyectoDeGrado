@@ -23,18 +23,22 @@ namespace WebOlayaDigital.Services
             _configuration = configuration;
             _configHttp = configHttp;
         }
-        public async Task<ResponsePOST> TopPost()
+        public async Task<PostResponse> TopPost()
         {
             Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(getPostAPI)}post");
             var _httpClient = new HttpClient();
-            var _json = await _httpClient.GetStringAsync(_getPostAPI);
+            var _json = await _httpClient.GetStringAsync(_getPostAPI.ToString());
 
-            GetPostWithTableRelation getPostWithTableRelation =
-                new GetPostWithTableRelation();
+            return JsonConvert.DeserializeObject<PostResponse>(_json);
+        }
 
-            ResponsePOST _post = JsonConvert.DeserializeObject<ResponsePOST>(_json);
+        public async Task<DetailResponse> DetailById(int id)
+        {
+            Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(getPostAPI)}post/{id}");
+            var _httpClient = new HttpClient();
+            var _json = await _httpClient.GetStringAsync(_getPostAPI.ToString());
 
-            return _post;
+            return JsonConvert.DeserializeObject<DetailResponse>(_json);
         }
 
         public async Task<string> AddPost(Post requestPost)
@@ -63,7 +67,6 @@ namespace WebOlayaDigital.Services
             ResponsePost responsePost = JsonConvert.DeserializeObject<ResponsePost>(_jsonData);
             return responsePost.Data.Id.ToString();
         }
-
 
     }
 }

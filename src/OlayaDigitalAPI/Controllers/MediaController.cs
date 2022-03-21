@@ -4,9 +4,7 @@ using OlayaDigital.Core.DTOs;
 using OlayaDigital.Core.Entities;
 using OlayaDigital.Core.Intarfaces;
 using OlayaDigitalAPI.Response;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace OlayaDigitalAPI.Controllers
