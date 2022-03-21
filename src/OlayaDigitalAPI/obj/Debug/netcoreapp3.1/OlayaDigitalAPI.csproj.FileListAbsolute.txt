@@ -572,7 +572,6 @@ C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcor
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.AssemblyInfoInputs.cache
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.AssemblyInfo.cs
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.csproj.CoreCompileInputs.cache
-C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\staticwebassets\OlayaDigitalAPI.StaticWebAssets.Manifest.cache
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.RazorTargetAssemblyInfo.cache

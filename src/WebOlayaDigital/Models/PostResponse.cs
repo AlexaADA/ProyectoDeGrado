@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebOlayaDigital.Models
 {
-    public class ResponsePOST
+    public class PostResponse
     {
         public string Msg { get; set; }
-        public ICollection<GetPostWithTableRelation> Data { get; set; }
+        public ICollection<PostWhithMedia> Data { get; set; }
     }
+
 }

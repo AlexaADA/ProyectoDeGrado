@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace WebOlayaDigital.Services
         #region "Field"
         private readonly IConfiguration _configuration;
         private readonly IConfigHttp _configHttp;
+        private readonly string enpoind = "ConfigUrls:url";
         #endregion
 
         public MediaServices(IConfiguration configuration, IConfigHttp configHttp)
@@ -24,7 +26,7 @@ namespace WebOlayaDigital.Services
 
         public async Task<bool> Save(MediaDto info)
         {
-            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}media";
+            string url = $"{_configuration.GetValue<string>(enpoind)}media";
 
             string _jsonData = JsonConvert.SerializeObject(info);
             HttpResponseMessage response = await _configHttp.GetConfigHttp().PostAsync(url,
@@ -38,5 +40,15 @@ namespace WebOlayaDigital.Services
 
             return true;
         }
+
+        public async Task<DetailResponse> DetailById(int id)
+        {
+            Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(enpoind)}media/{id}");
+            var _httpClient = new HttpClient();
+            var _json = await _httpClient.GetStringAsync(_getPostAPI.ToString());
+
+            return JsonConvert.DeserializeObject<DetailResponse>(_json);
+        }
+
     }
 }
