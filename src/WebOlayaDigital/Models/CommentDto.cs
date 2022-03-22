@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebOlayaDigital.Models
+﻿namespace WebOlayaDigital.Models
 {
     public class CommentDto
     {
         public string Description { get; set; }
         public int? IdPost { get; set; }
         public int? IdUser { get; set; }
+        public string CommentUser { get; set; }
     }
 }

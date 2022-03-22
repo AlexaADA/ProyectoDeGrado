@@ -1,0 +1,49 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = Model.Categories.FirstOrDefault().name;
+    string imagen = Url.Content($"~/img/bg3.jpg");
+    Layout = "~/Views/Shared/_Details.cshtml";
+}
+
+<div class="container">
+
+
+    <div class="section section-contacts">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="text-center title">@ViewData["Title"]</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.Post)
+            {
+
+                <div class="col-md-3 mt-4">
+
+                    <div class="card h-80">
+                        @if (item.MediaDto.Count > 0)
+                        {
+                            <img class="card-img-top" src="~/img/publicaciones/@item.MediaDto.Where(x => x.Cover == true).FirstOrDefault().Route" alt="@item.Tittle">
+                        }
+                        else
+                        {
+                            <img class="card-img-top" src="~/img/publicaciones/wallpaper.jpeg" target="_blank" alt="@item.Tittle">
+                        }
+                        <div class="card-body">
+                            <h6>@item.Tittle</h6>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" asp-controller="home" asp-action="Detail" asp-route-id="@item.Id">Ver</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+        </div>
+    </div>
+
+
+</div>
+<br />
+<br />

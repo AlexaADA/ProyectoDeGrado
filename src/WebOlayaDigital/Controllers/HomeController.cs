@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,25 +19,56 @@ namespace WebOlayaDigital.Controllers
         private readonly IPostService _postService;
         private readonly IUploadedFileIIS _uploadedFileIIS;
         private readonly IMediaServices _mediaServices;
-        public HomeController(ILogger<HomeController> logger, IPostService postService, IUploadedFileIIS uploadedFileIIS, IMediaServices mediaServices)
+        private readonly ICommentService _commentService;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IAdminServices _adminServices;
+
+        public HomeController(ILogger<HomeController> logger, IPostService postService, IUploadedFileIIS uploadedFileIIS, IMediaServices mediaServices, ICommentService commentService, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager, IAdminServices adminServices)
         {
             _logger = logger;
             _postService = postService;
             _uploadedFileIIS = uploadedFileIIS;
             _mediaServices = mediaServices;
+            _commentService = commentService;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _roleManager = roleManager;
+            _adminServices = adminServices;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            Post categoriesDropList = await _adminServices.CategoriesDropList();
+            List<(string name, string url)> categories = new List<(string name, string url)>();
+            categoriesDropList.Categories.ForEach(ctgry => categories.Add((ctgry.Text, ctgry.Value)));
+            PostResponse post = await _postService.TopPost();
+
             HomeModel model = new HomeModel();
-            model.Post = await _postService.TopPost();
+            model.Post = post.Data.Take(10).ToList();
+            model.Categories = categories;
             return View(model);
         }
 
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
+            List<string> roles = new List<string>();
+
+            if (!string.IsNullOrEmpty(User.Identity.Name))
+            {
+                IdentityUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+                roles = (List<string>) await _userManager.GetRolesAsync(user);
+            }
+            else
+            {
+                roles.Add("UserApp");
+            }
+
+            ViewBag.Roles = roles;
+
             DetailResponse detail = await _postService.DetailById(id);
             ViewBag.Error = string.Empty;
 
@@ -79,9 +111,43 @@ namespace WebOlayaDigital.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Comment(int idPost, int idUser, string comment)
+        {
+            if (comment.Length > 500)
+            {
+                ViewBag.Error = "No puede superar los 500 caracteres";
+                return RedirectToAction("Detail", new { id = idPost });
+            }
+
+            await _commentService.Save(idPost, idUser, comment);
+
+            ViewBag.Error = "Se agrego correctamente el comentario";
+            return RedirectToAction("Detail", new { id = idPost });
+        }
+
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Categories(string nameCategory)
+        {
+            PostResponse post = await _postService.TopPost();
+            Post categoriesDropList = await _adminServices.CategoriesDropList();
+            List<(string name, string url)> categories = new List<(string name, string url)>();
+            categoriesDropList.Categories.ForEach(ctgry =>
+            {
+                if (ctgry.Value == nameCategory)
+                {
+                    categories.Add((ctgry.Text, ctgry.Value));
+                };
+            });
+
+            HomeModel model = new HomeModel();
+            model.Post = post.Data.Where(ctg => ctg.IdCategory == int.Parse(nameCategory)).ToList();
+            model.Categories = categories;
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

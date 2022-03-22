@@ -109,7 +109,8 @@ namespace OlayaDigital.Core.Service
                 Id = select.Id,
                 Description = select.Description,
                 IdPost = select.IdPost,
-                IdUser = user.Id
+                IdUser = user.Id,
+                CommentUser = _unitOfWork.UserRepository.GetById((int)user.Id).Result.Name,
             }).ToList();
 
             userwithAllTheInformationDto.IdUser = user.Id;
