@@ -579,3 +579,4 @@ C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcor
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.dll
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.pdb
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.genruntimeconfig.cache
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\OlayaDigitalAPI\obj\Debug\netcoreapp3.1\OlayaDigitalAPI.MvcApplicationPartsAssemblyInfo.cs

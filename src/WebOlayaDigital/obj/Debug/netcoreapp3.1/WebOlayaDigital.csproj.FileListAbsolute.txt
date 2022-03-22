@@ -802,3 +802,6 @@ C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcor
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Detail.cshtml.g.cs
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Services.cshtml.g.cs
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Sedes.cshtml.g.cs
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Categories.cshtml.g.cs

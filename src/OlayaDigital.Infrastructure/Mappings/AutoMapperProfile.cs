@@ -11,6 +11,8 @@ namespace OlayaDigital.Infrastructure.Mappings
             CreateMap<Post, PostDto>().ReverseMap();
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<Media, MediaDto>().ReverseMap();
+            CreateMap<Comment, CommentDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
         }
     }
 }

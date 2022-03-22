@@ -83,6 +83,11 @@ namespace WebOlayaDigital.Controllers
         [HttpGet]
         public ActionResult Vision() => View();
 
+        [HttpGet]
+        public ActionResult Services() => View();
+
+        [HttpGet]
+        public ActionResult Sedes() => View();
 
         #region "Internal"
         private MediaDto UploadImage(IFormFile file, string account, string idPost)
