@@ -67,8 +67,66 @@ namespace WebOlayaDigital.Controllers
                 return View(data);
             }
 
-            string idPost = await _postService.AddPost(data);
-            var inf = UploadImage(data.File, "publicaciones", idPost);
+            var addPost = await _postService.AddPost(data);
+            var inf = UploadImage(data.File, "publicaciones", addPost.Id);
+            await _mediaServices.Save(inf);
+
+            //Crear correo pa todos los usuarios registrados.
+            //Logica...
+
+            return RedirectToAction("index", "home");
+        }
+
+
+        [HttpGet]
+        public async Task<ActionResult> UpdatePost(int postId)
+        {
+            DetailResponse post = await _postService.DetailById(postId);
+
+            if (post == null) return View("Error");
+
+            var categories = await _adminServices.CategoriesDropList();
+            Post model = new Post()
+            {
+                Categories = categories.Categories,
+                Category = post.Data.IdCategory.ToString(),
+                Description = post.Data.Description,
+                Id = postId,
+                Tittle = post.Data.Tittle,
+                Url = post.Data.Url
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdatePost(Post data)
+        {
+            var categories = await _adminServices.CategoriesDropList();
+            int ThreeMegaBytes = 3 * 1024 * 1024;
+
+            if (data.File == null)
+            {
+                ViewBag.Error = "La imagen no tiene el formato correcto.";
+                data.Categories = categories.Categories;
+                return View(data);
+            }
+            else if (string.IsNullOrEmpty(SupportedExtensions(data.File.ContentType)))
+            {
+                ViewBag.Error = "La imagen es obligatoria.";
+                data.Categories = categories.Categories;
+                return View(data);
+
+            }
+            else if (data.File.Length > ThreeMegaBytes)
+            {
+                ViewBag.Error = "La imagen cargada no puede exceder los 300 kb, cargue una imagen más pequeña.";
+                data.Categories = categories.Categories;
+                return View(data);
+            }
+
+            bool addUpdate = await _postService.AddUpdate(data);
+            var inf = UploadImage(data.File, "publicaciones", data.Id);
             await _mediaServices.Save(inf);
 
             //Crear correo pa todos los usuarios registrados.
@@ -90,7 +148,7 @@ namespace WebOlayaDigital.Controllers
         public ActionResult Sedes() => View();
 
         #region "Internal"
-        private MediaDto UploadImage(IFormFile file, string account, string idPost)
+        private MediaDto UploadImage(IFormFile file, string account, int idPost)
         {
             string nameImagen = Guid.NewGuid().ToString();
             string uniqueFileName;
@@ -108,12 +166,13 @@ namespace WebOlayaDigital.Controllers
             {
                 Cover = true,
                 Extension = file.ContentType,
-                IdPost = int.Parse(idPost),
+                IdPost = idPost,
                 FileName = nameImagen,
                 Route = uniqueFileName,
                 FileSize = file.Length
             };
         }
+
         internal string SupportedExtensions(string contentType)
         {
             List<string> supportedExtensions = new List<string>()

@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +44,21 @@ namespace WebOlayaDigital.Services
             post.Categories = selectListItem;
             return post;
         }
- 
+
+        public async Task<UserResponse> CrearUser(UserDto userDto)
+        {
+            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}user";
+            UserResponse userResponse = new UserResponse();
+
+            string _jsonData = JsonConvert.SerializeObject(userDto);
+            HttpResponseMessage response = await _configHttp.GetConfigHttp().PostAsync(url,
+                 new StringContent(_jsonData, Encoding.UTF8, "application/json"));
+
+            if (!response.IsSuccessStatusCode)
+                return new UserResponse() { Msg = $"statusCode: {response.StatusCode}, messageException: {response.Content.ReadAsStringAsync().Result}" };
+
+            return JsonConvert.DeserializeObject<UserResponse>(await response.Content.ReadAsStringAsync());
+        }
 
         #region "Private"
 

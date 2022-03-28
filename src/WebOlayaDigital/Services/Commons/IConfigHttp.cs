@@ -13,6 +13,7 @@ namespace WebOlayaDigital.Services.Commons
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Content-Transfer-Encoding", "UTF-8");
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             //client.DefaultRequestHeaders.Add("x-api-key", aFKey);
             return client;
         }

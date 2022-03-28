@@ -66,7 +66,10 @@ namespace OlayaDigitalAPI.Controllers
             var _dataDto = _mapper.Map<UserDto>(_data);
 
             //Estructurar el response del api
-            var _response = new ApiResponse<UserDto>(_dataDto);
+            var _response = new ApiResponse<UserDto>(_dataDto)
+            {
+                Msg = "El usuario se registri exitosamente."
+            };
             return Ok(_response);
         }
 
