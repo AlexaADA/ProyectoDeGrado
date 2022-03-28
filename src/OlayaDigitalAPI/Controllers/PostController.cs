@@ -136,7 +136,10 @@ namespace OlayaDigitalAPI.Controllers
             var _result = await _postService.UpdatePost(post);
 
             //Estructurar el response del api
-            var _response = new ApiResponse<bool>(_result);
+            var _response = new ApiResponse<bool>(_result)
+            {
+                Msg = "El post se actualizo correctamente"
+            };
             return Ok(_response);
         }
 

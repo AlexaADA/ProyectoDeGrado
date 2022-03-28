@@ -53,7 +53,7 @@ namespace WebOlayaDigital.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Detail(int id)
+        public async Task<IActionResult> Detail(int id, string msg)
         {
             List<string> roles = new List<string>();
 
@@ -70,7 +70,7 @@ namespace WebOlayaDigital.Controllers
             ViewBag.Roles = roles;
 
             DetailResponse detail = await _postService.DetailById(id);
-            ViewBag.Error = string.Empty;
+            ViewBag.Error = msg;
 
             return View(detail);
         }
@@ -81,23 +81,25 @@ namespace WebOlayaDigital.Controllers
             int ThreeMegaBytes = 3 * 1024 * 1024;
             List<MediaDto> dataMedia = new List<MediaDto>();
 
+            if (formFile.Count == 0)
+            {
+                return RedirectToAction("Detail", new { id = idPost, msg = "Seleccione una o más imagenes." });
+            }
+
             foreach (var img in formFile)
             {
                 if (img == null)
                 {
-                    ViewBag.Error = "Una o varias imagenes no tiene el formato correcto.";
-                    return RedirectToAction("Detail", new { id = idPost });
+                    return RedirectToAction("Detail", new { id = idPost, msg = "Una o varias imagenes no tiene el formato correcto." });
                 }
                 else if (string.IsNullOrEmpty(SupportedExtensions(img.ContentType)))
                 {
-                    ViewBag.Error = "La imagen es obligatoria.";
-                    return RedirectToAction("Detail", new { id = idPost });
+                    return RedirectToAction("Detail", new { id = idPost, msg = "La imagen es obligatoria." });
 
                 }
                 else if (img.Length > ThreeMegaBytes)
                 {
-                    ViewBag.Error = "Una o varias imagens cargada exceden los 300 kb, cargue imagenes más pequeña.";
-                    return RedirectToAction("Detail", new { id = idPost });
+                    return RedirectToAction("Detail", new { id = idPost, msg = "Una o varias imagens cargada exceden los 300 kb, cargue imagenes más pequeña." });
                 }
 
                 dataMedia.Add(UploadImage(img, "publicaciones", idPost.ToString()));
@@ -108,7 +110,7 @@ namespace WebOlayaDigital.Controllers
                 await _mediaServices.Save(dataImage);
             }
 
-            return View();
+            return RedirectToAction("Detail", new { id = idPost, msg = string.Empty });
         }
 
         [HttpPost]

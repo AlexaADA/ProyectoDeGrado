@@ -7,7 +7,8 @@ namespace WebOlayaDigital.Interfaces
     public interface IPostService
     {
         Task<PostResponse> TopPost();
-        Task<string> AddPost(Post requestPost);
+        Task<Post> AddPost(Post requestPost);
+        Task<bool> AddUpdate(Post requestPost);
         Task<DetailResponse> DetailById(int id);
     }
 }
