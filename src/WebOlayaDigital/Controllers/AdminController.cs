@@ -125,6 +125,14 @@ namespace WebOlayaDigital.Controllers
                 return View(data);
             }
 
+            DetailResponse post = await _postService.DetailById(data.Id);
+
+            MediaDto cover = post.Data.Media.Where(x => x.Cover == true).FirstOrDefault();
+            if (cover != null)
+            {
+                await _mediaServices.Delete(cover.Id);
+            }
+
             bool addUpdate = await _postService.AddUpdate(data);
             var inf = UploadImage(data.File, "publicaciones", data.Id);
             await _mediaServices.Save(inf);

@@ -41,6 +41,13 @@ namespace WebOlayaDigital.Services
             return true;
         }
 
+        public async Task Delete(int id)
+        {
+            Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(enpoind)}media/{id}");
+            var _httpClient = new HttpClient();
+            var _json = await _httpClient.DeleteAsync(_getPostAPI.ToString());
+        }
+
         public async Task<DetailResponse> DetailById(int id)
         {
             Uri _getPostAPI = new Uri($"{_configuration.GetValue<string>(enpoind)}media/{id}");

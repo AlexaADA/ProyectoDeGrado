@@ -116,7 +116,11 @@ namespace WebOlayaDigital.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment(int idPost, int idUser, string comment)
         {
-            if (comment.Length > 500)
+            if (comment == null)
+            {
+                ViewBag.Error = "No puede enviar un comentario nulo";
+            }
+            else if (comment.Length > 500)
             {
                 ViewBag.Error = "No puede superar los 500 caracteres";
                 return RedirectToAction("Detail", new { id = idPost });

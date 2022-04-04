@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.Extensions.Configuration;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System;
@@ -28,9 +27,9 @@ namespace WebOlayaDigital.Services.Commons
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
                 _ = await client.SendEmailAsync(msg);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                throw new Exception(ex.Message);
             }
 
 

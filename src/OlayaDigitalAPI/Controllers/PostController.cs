@@ -125,8 +125,6 @@ namespace OlayaDigitalAPI.Controllers
             return Ok(_response);
         }
 
-
-
         //Ejemplo para actualizar una entidad https: //localhost:44389/api/post?id=1
         [HttpPut]
         public async Task<IActionResult> Put(int id, PostDto postDto)

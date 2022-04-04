@@ -12,8 +12,12 @@
     <div class="container">
         <div class="section section-contacts">
             <div class="container text-center">
-                <img class="img-fluid" src="~/img/publicaciones/@Model.Data.Media.Where(x => x.Cover).FirstOrDefault().Route" target="_blank" alt="@Model.Data.Name" height="50%">
-                <figcaption class="figure-caption">Autor. @Model.Data.Name, email: @Model.Data.Email </figcaption>
+
+                @if(@Model.Data.Media.Where(x => x.Cover).Count() > 0){
+                    <img class="img-fluid" src="~/img/publicaciones/@Model.Data.Media.Where(x => x.Cover).FirstOrDefault().Route" target="_blank" alt="@Model.Data.Name" height="50%">
+                    <figcaption class="figure-caption">Autor. @Model.Data.Name, email: @Model.Data.Email </figcaption>
+                }
+
             </div>
             <div class="container text-center mt-3">
                 <h1>@Model.Data.Tittle</h1>
@@ -112,7 +116,7 @@
                             <input type="hidden" name="idUser" value="@Model.Data.IdUser" />
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="input-group input-group-outline my-3">
                                         <textarea class="form-control" name="comment" id="comment"></textarea>
                                     </div>
@@ -129,11 +133,15 @@
         }
 
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
                 <a class="btn btn-primary" asp-action="UpdatePost" asp-controller="Admin" asp-route-postId="@Model.Data.IdPost">Actualizar</a>
             </div>
         </div>
     </div>
+
+    <br />
+    <br />
 </div>
+
