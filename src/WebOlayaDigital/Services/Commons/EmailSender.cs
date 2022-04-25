@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.Extensions.Configuration;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System;
@@ -22,15 +21,15 @@ namespace WebOlayaDigital.Services.Commons
             try
             {
                 var from = new EmailAddress("alexa.a.d.a1998@gmail.com");
-                var to = new EmailAddress(email, "Example User");
+                var to = new EmailAddress(email, "Olaya Digital");
                 var plainTextContent = subject;
                 var htmlContent = htmlMessage;
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
                 _ = await client.SendEmailAsync(msg);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                throw new Exception(ex.Message);
             }
 
 

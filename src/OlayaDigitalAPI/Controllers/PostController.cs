@@ -62,7 +62,7 @@ namespace OlayaDigitalAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPostWithAudiMedia()
         {
-            var _getPostWithAudiMedia = _postService.GetPostWithAudiMedia();
+            var _getPostWithAudiMedia = _postService.GetPostWithAudiMedia().Where(x => x.Enabled);
 
             List<GetPostWithTableRelation> _getPostWithTableRelationList = 
                 new List<GetPostWithTableRelation>();
@@ -78,6 +78,7 @@ namespace OlayaDigitalAPI.Controllers
                     _getPostWithTableRelation.Url = item.Url;
                     _getPostWithTableRelation.Description = item.Description;
                     _getPostWithTableRelation.IdCategory = item.IdCategory;
+                    _getPostWithTableRelation.Enabled = item.Enabled;
                     _getPostWithTableRelation.IdUser = item.IdUser;
 
                     _getPostWithTableRelation.Comments = _mapper.Map<List<CommentDto>>(item.Coments);
@@ -124,8 +125,6 @@ namespace OlayaDigitalAPI.Controllers
             var _response = new ApiResponse<PostDto>(postDto);
             return Ok(_response);
         }
-
-
 
         //Ejemplo para actualizar una entidad https: //localhost:44389/api/post?id=1
         [HttpPut]

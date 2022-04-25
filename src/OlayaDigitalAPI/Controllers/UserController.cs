@@ -29,7 +29,7 @@ namespace OlayaDigitalAPI.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetAllUser()
         {
             var _data = _unitOfWork.UserRepository.GetAll();
 
@@ -47,7 +47,7 @@ namespace OlayaDigitalAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPost(int id)
+        public async Task<IActionResult> GetUser(int id)
         {
             var _data = await _unitOfWork.UserRepository.GetById(id);
             var _dataDto = _mapper.Map<UserDto>(_data);
@@ -58,18 +58,26 @@ namespace OlayaDigitalAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(UserDto model)
+        public async Task<IActionResult> Create(UserDto model)
         {
-            var _data = _mapper.Map<User>(model);
-            await _unitOfWork.UserRepository.Add(_data);
-            await _unitOfWork.saveChangesAsync();
-            var _dataDto = _mapper.Map<UserDto>(_data);
+            var email = _unitOfWork.UserRepository.GetAll().Where(x => x.Email == model.Email)
+                .FirstOrDefault();
 
-            //Estructurar el response del api
-            var _response = new ApiResponse<UserDto>(_dataDto)
+            UserDto _dataDto = new UserDto();
+            var _response = new ApiResponse<UserDto>(_dataDto);
+
+            if (string.IsNullOrEmpty(email?.Email))
             {
-                Msg = "El usuario se registri exitosamente."
-            };
+                var _data = _mapper.Map<User>(model);
+                await _unitOfWork.UserRepository.Add(_data);
+                await _unitOfWork.saveChangesAsync();
+                _dataDto = _mapper.Map<UserDto>(_data);
+                _response.Msg = "El usuario se registro exitosamente.";
+
+                return Ok(_response);
+            }
+
+            _response.Msg = "El usuario ya se encuentra registrado.";
             return Ok(_response);
         }
 

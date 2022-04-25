@@ -6,5 +6,6 @@ namespace WebOlayaDigital.Interfaces
     public interface IMediaServices
     {
         Task<bool> Save(MediaDto info);
+        Task Delete(int id);
     }
 }

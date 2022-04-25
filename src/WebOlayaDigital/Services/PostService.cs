@@ -51,6 +51,7 @@ namespace WebOlayaDigital.Services
             post.Tittle = requestPost.Tittle;
             post.Url = Guid.NewGuid().ToString();
             post.Id = requestPost.Id;
+            post.Enabled = true;
             post.IdCategory = Convert.ToInt16(requestPost.Category);
             post.IdUser = 1;
 
@@ -70,6 +71,32 @@ namespace WebOlayaDigital.Services
         }
 
         public async Task<bool> AddUpdate(Post requestPost)
+        {
+            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}post?id={requestPost.Id}";
+
+            PostDto post = new PostDto();
+            post.Description = requestPost.Description;
+            post.Tittle = requestPost.Tittle;
+            post.Url = Guid.NewGuid().ToString();
+            post.Id = requestPost.Id;
+            post.Enabled = requestPost.Enabled;
+            post.IdCategory = Convert.ToInt16(requestPost.Category);
+            post.IdUser = 1;
+
+
+            string _jsonData = JsonConvert.SerializeObject(post);
+            HttpResponseMessage response = await _configHttp.GetConfigHttp().PutAsync(url,
+                 new StringContent(_jsonData, Encoding.UTF8, "application/json"));
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"statusCode: {response.StatusCode}, messageException: {response.Content.ReadAsStringAsync().Result}");
+            }
+
+            return true;
+        }
+
+        public async Task<bool> DisablePost(Post requestPost)
         {
             string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}post?id={requestPost.Id}";
 

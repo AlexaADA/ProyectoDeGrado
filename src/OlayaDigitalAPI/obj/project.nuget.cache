@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dPNmlkPixZZy6SzcDMr0k1UXruowCNz479c35kJTICAUIdh+tkoHPsrt3n7zHy/lMfZZQi4lRd2I0Oeh/ruPlA==",
+  "dgSpecHash": "Apoocrs9wwLfjykhlJk9KD/IP5KeV7PTcMWCJ3wvBpIklR9hOzW0NXSY72rLPQFAqiIEgjJmaGDZWDNbXhXy8g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\OlayaDigitalAPI\\OlayaDigitalAPI.csproj",
   "expectedPackageFiles": [
@@ -198,7 +198,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"NewsAPI 0.6.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "Package 'NewsAPI 0.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "NewsAPI",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

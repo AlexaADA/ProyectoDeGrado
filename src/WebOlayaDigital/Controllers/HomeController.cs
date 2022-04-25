@@ -56,22 +56,24 @@ namespace WebOlayaDigital.Controllers
         public async Task<IActionResult> Detail(int id, string msg)
         {
             List<string> roles = new List<string>();
+            DetailResponse detail = await _postService.DetailById(id);
+
 
             if (!string.IsNullOrEmpty(User.Identity.Name))
             {
                 IdentityUser user = await _userManager.FindByNameAsync(User.Identity.Name);
                 roles = (List<string>) await _userManager.GetRolesAsync(user);
-            }
-            else
-            {
-                roles.Add("UserApp");
+
+                var getUserId = await _adminServices.getAllUser();
+                if (getUserId != null)
+                {
+                    detail.IdUserCurrents = getUserId.Data.Where(x => x.Email == user.Email)
+                        .Select(x => x.Id).FirstOrDefault();
+                }
             }
 
             ViewBag.Roles = roles;
-
-            DetailResponse detail = await _postService.DetailById(id);
             ViewBag.Error = msg;
-
             return View(detail);
         }
 
@@ -116,7 +118,11 @@ namespace WebOlayaDigital.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment(int idPost, int idUser, string comment)
         {
-            if (comment.Length > 500)
+            if (comment == null)
+            {
+                ViewBag.Error = "No puede enviar un comentario nulo";
+            }
+            else if (comment.Length > 500)
             {
                 ViewBag.Error = "No puede superar los 500 caracteres";
                 return RedirectToAction("Detail", new { id = idPost });
@@ -151,6 +157,7 @@ namespace WebOlayaDigital.Controllers
             model.Categories = categories;
             return View(model);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

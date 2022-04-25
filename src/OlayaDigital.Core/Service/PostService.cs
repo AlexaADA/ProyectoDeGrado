@@ -1,12 +1,9 @@
 ﻿using OlayaDigital.Core.DTOs;
 using OlayaDigital.Core.Entities;
-using OlayaDigital.Core.Exceptions;
 using OlayaDigital.Core.Intarfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OlayaDigital.Core.Service
@@ -38,7 +35,7 @@ namespace OlayaDigital.Core.Service
             //await Task.Delay(10);
             #endregion
 
-            var _post = _unitOfWork.PostRepository.GetAll();
+            var _post = _unitOfWork.PostRepository.GetAll().Where(e => e.Enabled);
             return _post;
         }
 
@@ -80,20 +77,21 @@ namespace OlayaDigital.Core.Service
         {
             Post post = await _unitOfWork.PostRepository.GetById(id);
             Category category = await _unitOfWork.CategoryRepository.GetById((int)post.IdCategory);
-            User user = await _unitOfWork.UserRepository.GetById((int)post.IdUser);
             IEnumerable<Media> media = _unitOfWork.MediaRepository.GetAll();
             IEnumerable<Comment> comments = _unitOfWork.CommentRepository.GetAll();
+            IEnumerable<User> users = _unitOfWork.UserRepository.GetAll();
 
             UserwithAllTheInformationDto userwithAllTheInformationDto = new UserwithAllTheInformationDto();
             userwithAllTheInformationDto.IdPost = post.Id;
             userwithAllTheInformationDto.Tittle = post.Tittle;
             userwithAllTheInformationDto.Url = post.Url;
             userwithAllTheInformationDto.Description = post.Description;
+            userwithAllTheInformationDto.Enabled = post.Enabled;
 
             userwithAllTheInformationDto.IdCategory = category.Id;
             userwithAllTheInformationDto.NameCategory = category.Name;
             userwithAllTheInformationDto.UrlCategory = category.Url;
-            userwithAllTheInformationDto.Media = media.Where(x => x.IdPost == post.Id).Select( select => new MediaDto()
+            userwithAllTheInformationDto.Media = media.Where(x => x.IdPost == post.Id).Select(select => new MediaDto()
             {
                 Cover = select.Cover,
                 Extension = select.Extension,
@@ -102,21 +100,28 @@ namespace OlayaDigital.Core.Service
                 Route = select.Route,
                 Id = select.Id,
                 IdPost = select.IdPost
-            }) .ToList();
-
-            userwithAllTheInformationDto.Comments = comments.Where(x => x.IdPost == post.Id).Select(select => new CommentDto()
-            {
-                Id = select.Id,
-                Description = select.Description,
-                IdPost = select.IdPost,
-                IdUser = user.Id,
-                CommentUser = _unitOfWork.UserRepository.GetById((int)user.Id).Result.Name,
             }).ToList();
 
-            userwithAllTheInformationDto.IdUser = user.Id;
-            userwithAllTheInformationDto.Name = user.Name;
-            userwithAllTheInformationDto.Phone = user.Phone;
-            userwithAllTheInformationDto.Email = user.Email;
+            userwithAllTheInformationDto.Comments = new List<CommentDto>();
+            if (comments.Any())
+            {
+                foreach (var cmt in comments)
+                {
+                    CommentDto cmtdto = new CommentDto();
+                    cmtdto.Id = cmt.Id;
+                    cmtdto.Description = cmt.Description;
+                    cmtdto.IdPost = cmt.IdPost;
+                    cmtdto.IdUser = cmt?.IdUser;
+                    cmtdto.CommentUser = users.Where(user => user.Id == cmt?.IdUser).Select(x => x.Name).FirstOrDefault();
+
+                    userwithAllTheInformationDto.Comments.Add(cmtdto);
+                }
+            }
+
+            userwithAllTheInformationDto.IdUser = users.Where(x => x.Id == post.IdUser).Select(x => x.Id).FirstOrDefault();
+            userwithAllTheInformationDto.Name = users.Where(x => x.Id == post.IdUser).Select(x => x.Name).FirstOrDefault();
+            userwithAllTheInformationDto.Phone = users.Where(x => x.Id == post.IdUser).Select(x => x.Phone).FirstOrDefault();
+            userwithAllTheInformationDto.Email = users.Where(x => x.Id == post.IdUser).Select(x => x.Email).FirstOrDefault();
 
             return userwithAllTheInformationDto;
         }

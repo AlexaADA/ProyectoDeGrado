@@ -30,6 +30,8 @@ namespace WebOlayaDigital.Models
         [Display(Name = "Categoria")]
         public string Category { get; set; }
 
+        public bool Enabled { get; set; }
+
         //[Required(ErrorMessage = "El campo es requerido")]
         [NotMapped]
         [Display(Name = "Imagen")]

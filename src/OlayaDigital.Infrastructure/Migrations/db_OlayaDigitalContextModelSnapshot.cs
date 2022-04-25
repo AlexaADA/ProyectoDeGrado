@@ -142,6 +142,9 @@ namespace OlayaDigital.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");
 

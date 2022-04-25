@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MyXPrepP/Ga7PG4OLxGevLC1DU7uHzNSJNZYSK907pMU4UnxC/cQmRN7RpEBo5njkctc53PP/Fn8peOl11oaZA==",
+  "dgSpecHash": "dUgCz3mwhsnrnFN7IS9k+nQv6LGKB6IFQLV/gpYf38pe/7lmt2X6o/uYHNdI+7HH3xJ9O7F0glGDVfeLUmKVpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jhota\\Source\\Repos\\ProyectoDeGrado\\src\\WebOlayaDigital\\WebOlayaDigital.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.1\\microsoft.aspnetcore.cryptography.keyderivation.3.1.1.nupkg.sha512",
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.1\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.1.nupkg.sha512",
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.1\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.1.nupkg.sha512",
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.1\\microsoft.aspnetcore.identity.ui.3.1.1.nupkg.sha512",
     "C:\\Users\\Jhota\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

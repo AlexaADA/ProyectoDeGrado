@@ -806,3 +806,4 @@ C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcor
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Sedes.cshtml.g.cs
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Categories.cshtml.g.cs
 C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UpdatePost.cshtml.g.cs
+C:\Users\Jhota\Source\Repos\ProyectoDeGrado\src\WebOlayaDigital\obj\Debug\netcoreapp3.1\Razor\Views\Admin\CreateCategory.cshtml.g.cs

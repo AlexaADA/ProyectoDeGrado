@@ -45,6 +45,21 @@ namespace WebOlayaDigital.Services
             return post;
         }
 
+
+        public async Task<GetUserAllResponse> getAllUser()
+        {
+            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}user";
+            var response = await _configHttp.GetConfigHttp().GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"statusCode: {response.StatusCode}, messageException: {await response.Content.ReadAsStringAsync()}");
+            }
+            string _json = await response.Content.ReadAsStringAsync();
+            GetUserAllResponse getAll = JsonConvert.DeserializeObject<GetUserAllResponse>(_json);
+
+            return getAll;
+        }
+
         public async Task<UserResponse> CrearUser(UserDto userDto)
         {
             string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}user";
@@ -60,6 +75,20 @@ namespace WebOlayaDigital.Services
             return JsonConvert.DeserializeObject<UserResponse>(await response.Content.ReadAsStringAsync());
         }
 
+        public async Task<UserResponse> CrearCategory(Category category)
+        {
+            string url = $"{_configuration.GetValue<string>("ConfigUrls:url")}Category";
+            UserResponse userResponse = new UserResponse();
+
+            string _jsonData = JsonConvert.SerializeObject(category);
+            HttpResponseMessage response = await _configHttp.GetConfigHttp().PostAsync(url,
+                 new StringContent(_jsonData, Encoding.UTF8, "application/json"));
+
+            if (!response.IsSuccessStatusCode)
+                return new UserResponse() { Msg = $"statusCode: {response.StatusCode}, messageException: {response.Content.ReadAsStringAsync().Result}" };
+
+            return JsonConvert.DeserializeObject<UserResponse>(await response.Content.ReadAsStringAsync());
+        }
         #region "Private"
 
         private async Task<CategoryResponse> Categories()
@@ -75,6 +104,7 @@ namespace WebOlayaDigital.Services
 
             return categories;
         }
+
         #endregion
 
     }

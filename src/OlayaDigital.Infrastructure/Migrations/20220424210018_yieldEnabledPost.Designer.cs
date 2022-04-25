@@ -10,8 +10,8 @@ using OlayaDigital.Infrastructure.Data;
 namespace OlayaDigital.Infrastructure.Migrations
 {
     [DbContext(typeof(db_OlayaDigitalContext))]
-    [Migration("20220316023254_vr10")]
-    partial class vr10
+    [Migration("20220424210018_yieldEnabledPost")]
+    partial class yieldEnabledPost
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -143,6 +143,9 @@ namespace OlayaDigital.Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");

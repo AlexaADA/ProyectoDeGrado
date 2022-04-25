@@ -11,6 +11,7 @@ namespace WebOlayaDigital.Models
         public string Tittle { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
+        public bool Enabled { get; set; }
         public int? IdCategory { get; set; }
         public int? IdUser { get; set; }
     }
