@@ -96,8 +96,12 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+
                     if (!_roleManager.Roles.Any())
-                    { await CreateRoles(); }
+                    { 
+                        await CreateRoles(); 
+                        await AssignRoles(user);
+                    }
                     else
                     {
                         await _userManager.AddToRoleAsync(user, "UserApp");
@@ -118,8 +122,7 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
                         await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                             $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-
-                        //Realizar la inserción de la base de dato de la base datos.
+                        //var test = await _adminServices.CrearUser
                         UserDto userDto = new UserDto()
                         {
                             Email = Input.Email,
@@ -150,7 +153,6 @@ namespace WebOlayaDigital.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
 
-                await AssignRoles(user);
             }
 
             return Page();

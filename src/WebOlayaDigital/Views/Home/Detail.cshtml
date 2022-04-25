@@ -25,7 +25,7 @@
             <p class="mt-3"> @Model.Data.Description </p>
         </div>
 
-        @if (roles != null && roles.Where(x => x == "SuperAdmin").ToList().Count > 0)
+        @if (roles != null && roles.Where(x => x == "Admin" || x == "SuperAdmin").ToList().Count > 0)
         {
             <div class="section section-contacts">
                 <div class="mb-3">
@@ -103,7 +103,7 @@
             </div>
         }
 
-        @if (roles != null && roles.Where(x => x == "Admin" || x == "SuperAdmin" || x == "UserApp").ToList().Count > 0)
+        @if (roles.Where(x => x == "Admin" || x == "SuperAdmin" || x == "UserApp").ToList().Count > 0)
         {
             <div class="section section-contacts">
                 <div class="container text-center mt-3">
@@ -113,7 +113,7 @@
                     <div class="mb-3">
                         <form class="mt-5" asp-action="Comment" asp-controller="Home" method="post">
                             <input type="hidden" name="idPost" value="@Model.Data.IdPost" />
-                            <input type="hidden" name="idUser" value="@Model.Data.IdUser" />
+                            <input type="hidden" name="idUser" value="@Model.IdUserCurrents" />
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -133,13 +133,20 @@
         }
 
     </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <a class="btn btn-primary" asp-action="UpdatePost" asp-controller="Admin" asp-route-postId="@Model.Data.IdPost">Actualizar</a>
+
+    @if (roles != null && roles.Where(x => x == "Admin" || x == "SuperAdmin").ToList().Count > 0)
+    {
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" asp-action="UpdatePost" asp-controller="Admin" asp-route-postId="@Model.Data.IdPost">Actualizar</a>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-dark" asp-action="DisablePost" asp-controller="Admin" asp-route-postId="@Model.Data.IdPost">Desactivar</a>
+                </div>
             </div>
         </div>
-    </div>
+    }
 
     <br />
     <br />

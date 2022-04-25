@@ -1,4 +1,6 @@
-﻿namespace WebOlayaDigital.Models
+﻿using System.Collections.Generic;
+
+namespace WebOlayaDigital.Models
 {
 
     public class UserResponse
@@ -7,6 +9,11 @@
         public UserDto Data { get; set; }
     }
 
+    public class GetUserAllResponse
+    {
+        public string Msg { get; set; }
+        public List<UserDto> Data { get; set; }
+    }
     public class UserDto
     {
         public int Id { get; set; }

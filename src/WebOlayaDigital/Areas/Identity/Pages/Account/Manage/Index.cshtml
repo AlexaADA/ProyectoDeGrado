@@ -7,35 +7,45 @@
 
 <div class="container">
 
-        <div class="section text-center">
-            <div class="row">
-                <div class="col-md-10 ml-auto mr-auto">
-                    <h2 class="title">Perfil</h2>
-                    <h5 class="description">Esta es una beta del programa, si usted encuentra algún error por sabor comuninicarlo a <a href="mailto:alexa.a.d.a1998@gmail.com">soporte</a></h5>
-                </div>
+    <div class="section text-center">
+        <div class="row">
+            <div class="col-md-10 ml-auto mr-auto">
+                <h2 class="title">Perfil</h2>
+                <h5 class="description">Esta es una beta del programa, si usted encuentra algún error por sabor comuninicarlo a <a href="mailto:alexa.a.d.a1998@gmail.com">soporte</a></h5>
             </div>
-            <div class="features">
-                <div class="row">
-                    <div class="col-md-4">
+        </div>
+        <div class="features">
+            <div class="row">
+                <div class="col-md-4">
 
-                        <a asp-controller="Admin" asp-action="CreatePOST">
-                            <div class="card m-2" style="width:100%;">
-                                <div class="card-body">
-                                    <h4 class="card-title">Crear POST</h4>
-                                    <h6 class="card-subtitle mb-2 text-muted">Artículos de interés a la comunidad</h6>
-                                    <p class="card-text">Uno de nuestro principal objetivo es dar a conocer todas aquellas actividades que a través de la casa de la cultura se realizan.</p>
-                                </div>
+                    <a asp-controller="Admin" asp-action="CreatePOST">
+                        <div class="card m-2" style="width:100%;">
+                            <div class="card-body">
+                                <h4 class="card-title">Crear una publicación</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Artículos de interés a la comunidad</h6>
+                                <p class="card-text">Uno de nuestro principal objetivo es dar a conocer todas aquellas actividades que a través de la casa de la cultura se realizan.</p>
                             </div>
-                        </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
 
-                    </div>
-
+                    <a asp-controller="Admin" asp-action="CreateCategory">
+                        <div class="card m-2" style="width:100%;">
+                            <div class="card-body">
+                                <h4 class="card-title">Crear una categoría</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">Categoría de interés a la comunidad</h6>
+                                <p class="card-text">Uno de nuestro principal objetivo es dar a conocer todas aquellas actividades que a través de la casa de la cultura se realizan.</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
 
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }

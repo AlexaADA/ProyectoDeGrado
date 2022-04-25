@@ -21,7 +21,7 @@ namespace WebOlayaDigital.Services.Commons
             try
             {
                 var from = new EmailAddress("alexa.a.d.a1998@gmail.com");
-                var to = new EmailAddress(email, "Example User");
+                var to = new EmailAddress(email, "Olaya Digital");
                 var plainTextContent = subject;
                 var htmlContent = htmlMessage;
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);

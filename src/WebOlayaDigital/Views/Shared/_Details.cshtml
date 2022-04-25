@@ -43,25 +43,27 @@ The above copyright notice and this permission notice shall be included in all c
                 </button>
             </div>
 
-         @*<div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a href="#pablo" class="nav-link">Libros</a>
+         <div class="collapse navbar-collapse">
+               <ul class="navbar-nav ml-auto">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                           De interés
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="Mision">
+                                <strong>Misión</strong>
+                            </a>
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="Vision">
+                                <strong>Visión</strong>
+                            </a>
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="Sedes">
+                                <strong>Sedes</strong>
+                            </a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a href="#pablo" class="nav-link">Eventos</a>
-                    </li>
+                    <partial name="_LoginPartial" />
                 </ul>
-
-                <form class="form-inline ml-auto">
-                    <div class="form-group no-border">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-white btn-just-icon btn-round">
-                        <i class="material-icons">search</i>
-                    </button>
-                </form>
-            </div>*@
+            </div>
         </div>
     </nav>
 
@@ -73,25 +75,15 @@ The above copyright notice and this permission notice shall be included in all c
             <nav class="float-left">
                 <ul>
                     <li>
-                        <a href="https://www.creative-tim.com/">
-                            Creative Tim
-                        </a>
+                        <a asp-controller="Admin" asp-action="Mision"><strong>Misión</strong></a>
                     </li>
                     <li>
-                        <a href="https://www.creative-tim.com/presentation">
-                            About Us
-                        </a>
+                        <a asp-controller="Admin" asp-action="Vision"><strong>Visión</strong></a>
                     </li>
                     <li>
-                        <a href="https://www.creative-tim.com/blog">
-                            Blog
-                        </a>
+                        <a asp-controller="Admin" asp-action="Sedes"><strong>Sedes</strong></a>
                     </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <div class="copyright float-right">

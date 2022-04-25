@@ -43,7 +43,7 @@ namespace OlayaDigitalAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPost(int id)
+        public async Task<IActionResult> GetCategory(int id)
         {
             var _data = await _unitOfWork.CategoryRepository.GetById(id);
             var _dataDto = _mapper.Map<CategoryDto>(_data);
@@ -54,7 +54,7 @@ namespace OlayaDigitalAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(CategoryDto model)
+        public async Task<IActionResult> Create(CategoryDto model)
         {
             var _data = _mapper.Map<Category>(model);
             await _unitOfWork.CategoryRepository.Add(_data);

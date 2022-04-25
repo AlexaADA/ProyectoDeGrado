@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OlayaDigital.Infrastructure.Migrations
 {
-    public partial class vr10 : Migration
+    public partial class yieldEnabledPost : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,7 @@ namespace OlayaDigital.Infrastructure.Migrations
                     Description = table.Column<string>(nullable: true),
                     IdCategory = table.Column<int>(nullable: true),
                     IdUser = table.Column<int>(nullable: true),
+                    Enabled = table.Column<bool>(nullable: false),
                     CategoryId = table.Column<int>(nullable: true),
                     UserId = table.Column<int>(nullable: true)
                 },

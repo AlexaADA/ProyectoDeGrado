@@ -55,9 +55,6 @@ The above copyright notice and this permission notice shall be included in all c
                             <a class="dropdown-item" asp-controller="Admin" asp-action="Vision">
                                 <strong>Visión</strong>
                             </a>
-                            <a class="dropdown-item" asp-controller="Admin" asp-action="Services">
-                                <strong>Servicios</strong>
-                            </a>
                             <a class="dropdown-item" asp-controller="Admin" asp-action="Sedes">
                                 <strong>Sedes</strong>
                             </a>
@@ -77,25 +74,15 @@ The above copyright notice and this permission notice shall be included in all c
             <nav class="float-left">
                 <ul>
                     <li>
-                        <a href="https://www.creative-tim.com/">
-                            Creative Tim
-                        </a>
+                        <a asp-controller="Admin" asp-action="Mision"><strong>Misión</strong></a>
                     </li>
                     <li>
-                        <a href="https://www.creative-tim.com/presentation">
-                            About Us
-                        </a>
+                        <a asp-controller="Admin" asp-action="Vision"><strong>Visión</strong></a>
                     </li>
                     <li>
-                        <a href="https://www.creative-tim.com/blog">
-                            Blog
-                        </a>
+                        <a asp-controller="Admin" asp-action="Sedes"><strong>Sedes</strong></a>
                     </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <div class="copyright float-right">
