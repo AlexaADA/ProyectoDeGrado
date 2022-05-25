@@ -76,9 +76,14 @@ namespace OlayaDigital.Core.Service
         public async Task<UserwithAllTheInformationDto> UserwithAllTheInformation(int id)
         {
             Post post = await _unitOfWork.PostRepository.GetById(id);
+            if (post is null)
+            {
+                throw new Exception("No se encontró el post");
+            }
+            
             Category category = await _unitOfWork.CategoryRepository.GetById((int)post.IdCategory);
             IEnumerable<Media> media = _unitOfWork.MediaRepository.GetAll();
-            IEnumerable<Comment> comments = _unitOfWork.CommentRepository.GetAll();
+            IEnumerable<Comment> comments = _unitOfWork.CommentRepository.GetAll().Where(e => e.IdPost == id);
             IEnumerable<User> users = _unitOfWork.UserRepository.GetAll();
 
             UserwithAllTheInformationDto userwithAllTheInformationDto = new UserwithAllTheInformationDto();
