@@ -20,8 +20,8 @@ namespace OlayaDigital.Infrastructure.Repositories
         public IEnumerable<Post> GetPostWithAudiMedia()
         {
             return _entities.Include(y => y.Medias)
-                .Include(x => x.Audits).Include(a => a.Coments)
-                .Take(8).ToList();
+                .Include(x => x.Audits)
+                .Include(a => a.Coments).ToList();
         }
     }
 }
